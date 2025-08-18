@@ -30,10 +30,10 @@ const Header = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 transition-colors duration-300", // only transition bg, not height
         isScrolled
           ? "bg-background/95 backdrop-blur-md shadow-lg border-b border-border"
-          : "bg-transparent"
+          : "bg-white" // keep white or transparent if you like
       )}
     >
       {/* Top Bar */}
@@ -47,7 +47,7 @@ const Header = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
-                <span>chennai@dredumed.comdredumed.com</span>
+                <span>chennai@dredumed.com</span>
               </div>
             </div>
             <div className="hidden md:block">

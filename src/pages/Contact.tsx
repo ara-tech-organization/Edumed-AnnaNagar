@@ -31,7 +31,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      details: ["chennai@dredumed.comdredumed.com", "admissions@dredumed.com"],
+      details: ["chennai@dredumed.com", "admissions@dredumed.com"],
       available: "Response within 24 hours",
     },
     {
@@ -76,7 +76,7 @@ const Contact = () => {
     {
       icon: MessageSquare,
       name: "General Inquiries",
-      email: "chennai@dredumed.comdredumed.com",
+      email: "chennai@dredumed.com",
       phone: "99648 10000",
       description: "General questions and information requests",
     },
