@@ -123,7 +123,7 @@ const About = () => {
             <p className="text-lg text-white/90 mb-8">
               Shaping the future of healthcare one student at a time.
             </p>
-            <button className="px-6 py-3 rounded-full font-semibold bg-gradient-to-r from-emerald-400 to-primary text-white shadow-lg hover:opacity-90 transition">
+            <button className="px-6 py-3 rounded-full font-semibold bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-white shadow-md shadow-lg hover:opacity-90 transition">
               Learn More
             </button>
           </div>
@@ -158,7 +158,7 @@ const About = () => {
                 key={index}
                 className="flex items-start gap-4 p-4 bg-white/60 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100"
               >
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-r from-primary to-emerald-500 flex items-center justify-center text-white font-bold">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-tr from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] flex items-center justify-center text-white font-bold">
                   ✓
                 </div>
                 <p className="text-lg text-gray-700 leading-relaxed">{point}</p>
@@ -168,7 +168,7 @@ const About = () => {
 
 
           <div className="mt-8">
-            <Button className="bg-gradient-to-r from-primary to-emerald-500 text-white px-8 py-4 rounded-full shadow-lg hover:scale-105 transition">
+            <Button className="bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-white shadow-md px-8 py-4 rounded-full shadow-lg hover:scale-105 transition">
               Explore Programs
             </Button>
           </div>
@@ -202,7 +202,7 @@ const About = () => {
             <Badge className="mb-6 bg-white/20 text-white border-white/30">Our Core Values</Badge>
             <h2 className="text-4xl font-extrabold mb-6 text-white">
               Values That Guide
-              <span className="text-emerald-300"> Our Mission</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488]"> Our Mission</span>
             </h2>
             <p className="text-lg text-white/80 max-w-2xl mx-auto">
               These fundamental principles shape every aspect of our medical education
@@ -220,7 +220,7 @@ const About = () => {
                 data-aos-delay={index * 100}
               >
                 {/* Floating Icon */}
-                <div className="absolute -top-8 left-8 w-16 h-16 rounded-full bg-gradient-to-tr from-emerald-400 to-primary flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                <div className="absolute -top-8 left-8 w-16 h-16 rounded-full bg-gradient-to-tr from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                   <value.icon className="h-8 w-8 text-white" />
                 </div>
 
@@ -260,7 +260,7 @@ const About = () => {
               className="bg-white border border-gray-200 rounded-2xl p-10 shadow-lg hover:shadow-xl transition-all duration-300"
               data-aos="fade-right"
             >
-              <div className="w-16 h-16 mb-6 rounded-full bg-gradient-to-tr from-emerald-400 to-primary flex items-center justify-center">
+              <div className="w-16 h-16 mb-6 rounded-full bg-gradient-to-tr from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] flex items-center justify-center">
                 {/* 🎯 Target Icon */}
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <circle cx="12" cy="12" r="10" strokeWidth="2" />
@@ -279,7 +279,7 @@ const About = () => {
               className="bg-white border border-gray-200 rounded-2xl p-10 shadow-lg hover:shadow-xl transition-all duration-300"
               data-aos="fade-left"
             >
-              <div className="w-16 h-16 mb-6 rounded-full bg-gradient-to-tr from-emerald-400 to-primary flex items-center justify-center">
+              <div className="w-16 h-16 mb-6 rounded-full bg-gradient-to-tr from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] flex items-center justify-center">
                 {/* 👁 Eye Icon */}
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1.5 12s4.5-7.5 10.5-7.5S22.5 12 22.5 12s-4.5 7.5-10.5 7.5S1.5 12 1.5 12z" />
@@ -426,13 +426,13 @@ const About = () => {
           <div data-aos="fade-up">
             <h2 className="text-xl-heading mb-6">
               Enroll in
-              <span className="block">Career-Focused Training</span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488]">Career-Focused Training</span>
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
               Launch your aesthetic career with hands-on, real-world internships designed to prepare you for success.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-primary hover:bg-white/90 font-semibold text-lg px-8">
+              <Button size="lg" className="bg-white text-[#056a7a] hover:bg-white/90 font-semibold text-lg px-8">
                 Explore Courses
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>

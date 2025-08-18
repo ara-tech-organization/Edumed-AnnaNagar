@@ -25,13 +25,13 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      details: ["+1 (555) 123-4567", "+1 (555) 123-4568 (Emergency)"],
+      details: ["99648 10000", "+1 (555) 123-4568 (Emergency)"],
       available: "24/7 Support Available",
     },
     {
       icon: Mail,
       title: "Email",
-      details: ["info@dredumed.com", "admissions@dredumed.com"],
+      details: ["chennai@dredumed.comdredumed.com", "admissions@dredumed.com"],
       available: "Response within 24 hours",
     },
     {
@@ -56,7 +56,7 @@ const Contact = () => {
       icon: Users,
       name: "Admissions Office",
       email: "admissions@dredumed.com",
-      phone: "+1 (555) 123-4567",
+      phone: "99648 10000",
       description: "Information about programs, applications, and enrollment",
     },
     {
@@ -76,8 +76,8 @@ const Contact = () => {
     {
       icon: MessageSquare,
       name: "General Inquiries",
-      email: "info@dredumed.com",
-      phone: "+1 (555) 123-4567",
+      email: "chennai@dredumed.comdredumed.com",
+      phone: "99648 10000",
       description: "General questions and information requests",
     },
   ];
@@ -157,7 +157,7 @@ const Contact = () => {
         <div className="relative z-10 container mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-16 items-center">
           {/* Vibrant glass form */}
           <div className="relative bg-gradient-to-br from-emerald-300/20 via-indigo-300/20 to-pink-300/20 backdrop-blur-xl p-10 rounded-3xl border border-white/40 shadow-[0_4px_25px_rgba(0,0,0,0.05)] transition-all">
-            <span className="inline-block px-4 py-1 rounded-full bg-gradient-to-r from-emerald-300 to-indigo-300 text-gray-900 text-sm mb-6 tracking-wide font-semibold">
+            <span className="inline-block px-4 py-1 rounded-full  bg-gradient-to-tr from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-sm mb-6 tracking-wide font-semibold">
               Let’s Talk
             </span>
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
@@ -182,7 +182,7 @@ const Contact = () => {
                 className="w-full p-4 rounded-xl bg-white border border-gray-200 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-300 transition-all"
                 placeholder="Your Message"
               ></textarea>
-              <button className="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-300 to-indigo-300 text-gray-900 font-semibold shadow-md hover:scale-[1.02] transition-all">
+              <button className="w-full py-3 rounded-xl bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-white shadow-md font-semibold shadow-md hover:scale-[1.02] transition-all">
                 Send Message
               </button>
             </form>
@@ -203,7 +203,7 @@ const Contact = () => {
                 key={idx}
                 className="group flex items-center gap-5 p-6 bg-gradient-to-r from-emerald-300/20 to-indigo-300/20 rounded-2xl border border-white/40 hover:scale-[1.02] transition-all duration-300"
               >
-                <div className="w-14 h-14 bg-gradient-to-br from-emerald-300 to-indigo-300 rounded-xl flex items-center justify-center text-gray-900 group-hover:rotate-3 transition-transform">
+                <div className="w-14 h-14 bg-gradient-to-tr from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] rounded-xl flex items-center justify-center text-gray-900 group-hover:rotate-3 transition-transform">
                   <item.icon className="w-6 h-6" />
                 </div>
                 <div>
@@ -226,12 +226,12 @@ const Contact = () => {
       <div className="container mx-auto px-4 relative">
         {/* Section Heading */}
         <div className="text-center mb-16" data-aos="fade-up">
-          <span className="inline-block px-4 py-1 rounded-full bg-gradient-to-r from-emerald-300 to-indigo-300 text-gray-900 text-sm font-semibold tracking-wide mb-4">
+          <span className="inline-block px-4 py-1 rounded-full bg-gradient-to-tr from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-sm font-semibold tracking-wide mb-4">
             Frequently Asked Questions
           </span>
           <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
             Common Questions
-            <span className="bg-gradient-to-r from-emerald-400 to-indigo-400 bg-clip-text text-transparent">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488]">
               {" "}
               & Answers
             </span>
@@ -281,7 +281,7 @@ const Contact = () => {
           <p className="text-gray-600 mb-4">
             Still have questions that we didn’t cover?
           </p>
-          <button className="px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-300 to-indigo-300 text-gray-900 font-semibold shadow-md hover:scale-[1.02] transition-transform">
+          <button className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-white shadow-md font-semibold shadow-md hover:scale-[1.02] transition-transform">
             Contact Our Support Team
           </button>
         </div>

@@ -147,7 +147,7 @@ const Volunteering = () => {
 
             <h1 className="mt-6 text-4xl md:text-6xl font-extrabold leading-tight text-white">
               Join Our
-              <span className="block text-transparent bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] bg-clip-text">Volunteer Program</span>
+              <span className="block text-transparent text-transparent bg-clip-text bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488]">Volunteer Program</span>
             </h1>
 
             <p className="mt-6 text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
@@ -155,7 +155,7 @@ const Volunteering = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4 mt-10">
-              <Button size="lg" className="bg-gradient-to-r from-emerald-400 to-primary text-white font-semibold px-8 py-4 shadow-lg hover:scale-105 transition-all flex items-center gap-2">
+              <Button size="lg" className="bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-white shadow-md font-semibold px-8 py-4 shadow-lg hover:scale-105 transition-all flex items-center gap-2">
                 Apply Now
                 <ArrowRight className="h-5 w-5" />
               </Button>
@@ -179,7 +179,7 @@ const Volunteering = () => {
                 Volunteer Model Program
               </span>
               <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
-                Experience <span className="bg-gradient-to-r from-primary to-emerald-500 bg-clip-text text-transparent">Aesthetic Excellence</span> First-Hand
+                Experience <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488]">Aesthetic Excellence</span> First-Hand
               </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 At the heart of our approach lies a commitment to hands-on experience and continuous learning.
@@ -189,19 +189,19 @@ const Volunteering = () => {
 
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-primary to-emerald-500 flex items-center justify-center text-white text-sm">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-tr from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] flex items-center justify-center text-white text-sm">
                     ✓
                   </div>
                   <p className="text-gray-700">Gain real-time exposure to cutting-edge aesthetic procedures.</p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-primary to-emerald-500 flex items-center justify-center text-white text-sm">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-tr from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] flex items-center justify-center text-white text-sm">
                     ✓
                   </div>
                   <p className="text-gray-700">Learn in a safe, professional, and innovation-focused environment.</p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-primary to-emerald-500 flex items-center justify-center text-white text-sm">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-tr from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] flex items-center justify-center text-white text-sm">
                     ✓
                   </div>
                   <p className="text-gray-700">Help practitioners refine their skills while contributing to quality care.</p>
@@ -209,7 +209,7 @@ const Volunteering = () => {
               </div>
 
               <div className="mt-8">
-                <button className="bg-gradient-to-r from-primary to-emerald-500 text-white px-8 py-4 rounded-full shadow-lg hover:scale-105 transition-transform duration-300">
+                <button className="bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-white shadow-md px-8 py-4 rounded-full shadow-lg hover:scale-105 transition-transform duration-300">
                   Become a Volunteer
                 </button>
               </div>
@@ -311,7 +311,7 @@ const Volunteering = () => {
         <div className="grid lg:grid-cols-2 min-h-[70vh]">
 
           {/* Left Side: Gradient intro panel */}
-          <div className="relative flex flex-col justify-center items-center text-center p-12 bg-gradient-to-br from-primary/90 to-emerald-500/90 text-white">
+          <div className="relative flex flex-col justify-center items-center text-center p-12 bg-gradient-to-tr from-[#1e3a8a] via-[#047857] to-[#0f766e] text-white">
             {/* Optional animated pattern overlay */}
             <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_1px_1px,_white_1px,_transparent_0)] [background-size:20px_20px]"></div>
 
@@ -341,7 +341,7 @@ const Volunteering = () => {
                 >
                   {/* Icon + Title */}
                   <div className="flex items-center mb-3">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-emerald-500 flex items-center justify-center mr-4 shadow-md">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] flex items-center justify-center mr-4 shadow-md">
                       <benefit.icon className="text-white w-6 h-6" />
                     </div>
                     <h3 className="font-semibold text-lg">{benefit.title}</h3>
@@ -479,7 +479,7 @@ const Volunteering = () => {
           {/* Form Card */}
           <div className="bg-white/95 backdrop-blur-xl p-10 lg:p-14">
             {/* Step Indicator */}
-            <div className="flex items-center gap-2 mb-6">
+            {/* <div className="flex items-center gap-2 mb-6">
               {[1, 2, 3].map((step) => (
                 <div key={step} className="flex items-center">
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold 
@@ -489,9 +489,9 @@ const Volunteering = () => {
                   {step < 3 && <div className="w-12 h-1 bg-gray-300"></div>}
                 </div>
               ))}
-            </div>
+            </div> */}
 
-            <h3 className="text-3xl font-semibold mb-2">Application Form</h3>
+            <h3 className="text-3xl font-semibold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488]">Application Form</h3>
             <p className="text-gray-500 mb-8">Start your volunteer journey today</p>
 
             <form className="space-y-6">
@@ -541,7 +541,7 @@ const Volunteering = () => {
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-primary to-emerald-500 text-white py-4 rounded-lg font-semibold text-lg shadow-md hover:shadow-lg hover:scale-[1.02] transition-all"
+                className="w-full bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-white shadow-md py-4 rounded-lg font-semibold text-lg shadow-md hover:shadow-lg hover:scale-[1.02] transition-all"
               >
                 Submit Application
               </button>

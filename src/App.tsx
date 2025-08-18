@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import ScrollToTop from "./components/ScrollToTop";
 
 // Pages
 import Index from "./pages/Index";
@@ -28,7 +27,7 @@ const App = () => {
   useEffect(() => {
     AOS.init({
       duration: 800,
-      easing: 'ease-in-out',
+      easing: "ease-in-out",
       once: true,
       offset: 100,
     });
@@ -43,7 +42,6 @@ const App = () => {
           <div className="min-h-screen flex flex-col">
             <Header />
             <main className="flex-1 pt-[120px]">
-              <ScrollToTop />
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/about" element={<About />} />
@@ -55,6 +53,17 @@ const App = () => {
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </main>
+
+            {/* Floating WhatsApp */}
+            <a
+              href="https://wa.me/919500214828"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white px-3 py-2 rounded-full shadow-lg transition-transform transform hover:scale-110"
+            >
+              <i className="fab fa-whatsapp text-2xl"></i>
+            </a>
+
             <Footer />
           </div>
         </BrowserRouter>

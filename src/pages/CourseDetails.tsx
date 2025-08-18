@@ -1441,7 +1441,7 @@ const CourseDetail = () => {
           </div>
 
           {/* Centered Timeline */}
-          <div className="relative flex justify-center lg:gap-10">
+          <div className="relative flex flex-col lg:flex-row justify-center lg:gap-10">
             {/* Vertical Timeline */}
             <div className="relative w-full lg:w-2/3 max-w-2xl">
               <div className="relative space-y-4">
@@ -1472,13 +1472,11 @@ const CourseDetail = () => {
             </div>
 
             {/* Sidebar Features */}
-            <div className="hidden lg:block lg:w-1/3 mt-12 lg:mt-0 relative">
+            <div className="w-full lg:w-1/3 mt-12 lg:mt-0 relative">
               <div className="sticky top-24 bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-gray-100">
                 <div className="flex items-center gap-3 mb-4">
                   <Target className="h-6 w-6 text-green-600" />
-                  <h3 className="text-2xl font-bold text-gray-900">
-                    Why This Course?
-                  </h3>
+                  <h3 className="text-2xl font-bold text-gray-900">Why This Course?</h3>
                 </div>
                 <p className="text-gray-600 text-sm mb-6">
                   Perfect for learners who want to:

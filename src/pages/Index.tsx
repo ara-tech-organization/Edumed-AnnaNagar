@@ -263,7 +263,7 @@ const Index = () => {
         className="relative overflow-hidden min-h-[90vh] flex items-center justify-center text-center px-6"
         style={{
           backgroundImage: `
-      linear-gradient(to right, rgba(0, 32, 64, 0.85), rgba(0, 64, 128, 0.85)),
+      linear-gradient(to right, rgba(1, 58, 114, 0.59), rgba(0, 64, 128, 0.77)),
       url(${bgImage})
     `,
           backgroundSize: "cover",
@@ -275,23 +275,19 @@ const Index = () => {
         <div className="flex justify-center items-center text-center">
           <div className="lg:w-full z-10 space-y-6 max-w-4xl">
             <h1
-              className="text-2xl lg:text-7xl font-bold leading-tight bg-clip-text text-transparent max-w-6xl mx-auto"
-              style={{
-                backgroundImage: "linear-gradient(to right, #d0fefa, #8decb4, #36c2a0)",
-              }}
+              className="text-2xl lg:text-7xl font-bold leading-tight text-white max-w-6xl mx-auto"
+
             >
               Welcome to DrEduMed Anna Nagar!
             </h1>
 
             <h4
-              className="text-xl lg:text-4xl font-bold leading-tight bg-clip-text text-transparent max-w-5xl mx-auto"
-              style={{
-                backgroundImage: "linear-gradient(to right, #e6fff9, #a0f1c5, #4fd1b3)",
-              }}
+              className="text-xl lg:text-4xl font-bold leading-tight text-white max-w-5xl mx-auto"
+
             >
               Your Path to a Successful Career in Medical & Aesthetics
             </h4>
-            
+
             <p className="text-lg opacity-90 text-white">
               Are you looking to expand your skills in the growing field of aesthetics?
               Join DrEduMed’s expert-led programs in Anna Nagar and become a certified
@@ -337,7 +333,7 @@ const Index = () => {
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
-                <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-tr from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] rounded-full flex items-center justify-center mx-auto mb-4">
                   <stat.icon className="h-8 w-8 text-white" />
                 </div>
                 <div className="text-3xl font-bold text-primary mb-2">
@@ -400,7 +396,7 @@ const Index = () => {
             {/* Button */}
             <button
               onClick={() => navigate("/about")}
-              className="inline-flex items-center bg-gradient-to-r from-primary to-primary-dark text-white font-medium px-6 py-3 rounded-full shadow-md hover:shadow-lg transition"
+              className="inline-flex items-center bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-white shadow-md text-white font-medium px-6 py-3 rounded-full shadow-md hover:shadow-lg transition"
             >
               Learn More
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -410,7 +406,7 @@ const Index = () => {
       </section>
 
       {/* Specialties Section */}
-      <section className="py-20 bg-gradient-to-r from-[#3ab0bc] to-[#a0e7e9]">
+      <section className="py-20">
         <div className="container mx-auto px-4">
           {/* Heading */}
           <div className="text-center mb-16" data-aos="fade-up">
@@ -439,7 +435,7 @@ const Index = () => {
                 data-aos-delay={index * 100}
               >
                 {/* Icon bubble */}
-                <div className="relative z-10 flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-tr from-primary to-primary/70 flex items-center justify-center shadow-lg">
+                <div className="relative z-10 flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-tr from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] flex items-center justify-center shadow-lg">
                   <item.icon className="h-8 w-8 text-white" />
                 </div>
 
@@ -468,7 +464,7 @@ const Index = () => {
               Featured Courses
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Most Popular <span className="text-primary">Featured Courses</span>
+              Most Popular <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488]">Featured Courses</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-xl mb-8">
               Explore our most in-demand courses designed by top medical professionals to advance your healthcare career.
@@ -534,12 +530,12 @@ const Index = () => {
                       <h3 className="font-semibold text-lg mb-2">{course.title}</h3>
                       <p className="text-sm text-muted-foreground mb-4">{course.description}</p>
 
-                       {/* Learn More Button */}
-        <Link to="/courses">
-          <Button className="w-full bg-gradient-primary text-white hover:opacity-90">
-            Learn More
-          </Button>
-        </Link>
+                      {/* Learn More Button */}
+                      <Link to="/courses">
+                        <Button className="w-full bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-white shadow-md hover:opacity-90">
+                          Learn More
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                 </SwiperSlide>
@@ -582,7 +578,7 @@ const Index = () => {
             >
               {certifiedCourses.map((course) => (
                 <SwiperSlide key={course.id}>
-                  <div className="bg-white rounded-2xl overflow-hidden shadow-lg transition-transform hover:scale-[1.02] h-[440px] sm:h-[450px] md:h-[470px]">
+                  <div className="bg-white rounded-2xl overflow-hidden shadow-lg transition-transform hover:scale-[1.02] h-[500px] sm:h-[520px] md:h-[530px]">
                     <img
                       src={course.image}
                       alt={course.title}
@@ -591,7 +587,14 @@ const Index = () => {
                     <div className="p-5">
                       <Badge className="mb-3 bg-primary/90 text-white">{course.tag}</Badge>
                       <h3 className="font-semibold text-lg mb-2">{course.title}</h3>
-                      <p className="text-sm text-muted-foreground">{course.description}</p>
+                      <p className="text-sm text-muted-foreground mb-4">{course.description}</p>
+
+                      {/* Learn More Button */}
+                      <Link to="/courses">
+                        <Button className="w-full bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-white shadow-md hover:opacity-90">
+                          Learn More
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                 </SwiperSlide>
@@ -605,7 +608,7 @@ const Index = () => {
               Certification Courses
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Most Popular <span className="text-primary">Certification Courses</span>
+              Most Popular <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488]">Certification Courses</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-xl mb-8">
               Explore our most in-demand courses designed by top medical professionals to advance your healthcare career.
@@ -687,7 +690,7 @@ const Index = () => {
                 Student Testimonials
               </Badge>
               <h2 className="text-3xl font-bold mb-8 text-primary">
-                What Our Students <span className="text-muted-foreground">Say About Us</span>
+                What Our Students <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488]">Say About Us</span>
               </h2>
               <TestimonialCarousel testimonials={testimonials} />
             </div>
@@ -699,10 +702,10 @@ const Index = () => {
       <section
         className="max-w-7xl mx-auto p-6 lg:p-12
     rounded-3xl
-    bg-gradient-to-r from-[#056a7a] via-[#6dc3cc] to-[#04bfbf] mb-8"
+    bg-gradient-to-tr from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] mb-8"
       >
         <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-lg">
-          <h2 className="text-4xl font-semibold mb-10 text-foreground">Frequently Asked Questions</h2>
+          <h2 className="text-4xl font-semibold mb-10 text-transparent bg-clip-text bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488]">Frequently Asked Questions</h2>
           <div className="flex flex-col lg:flex-row gap-10 relative">
 
             {/* Left: Questions */}
@@ -717,7 +720,7 @@ const Index = () => {
                   <div className="flex items-center gap-3">
                     <span
                       className={`block w-4 h-4 rounded-full
-                ${activeIndex === index ? "bg-[#04bfbf]" : "bg-[#a8d5db]"}`}
+                ${activeIndex === index ? "bg-[#6ee7b7]" : "bg-[#a8d5db]"}`}
                     ></span>
                     <p className={`text-base font-medium ${activeIndex === index ? "text-[#056a7a]" : "text-gray-900"}`}>
                       {faq.question}
@@ -740,7 +743,7 @@ const Index = () => {
             <div className="w-full lg:w-1/2 relative z-10">
               <div
                 className="relative rounded-xl p-10 text-gray-800 
-            bg-gradient-to-r from-[#3ab0bc] to-[#a0e7e9] 
+            bg-gradient-to-tr from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488]
             shadow-lg
             transform lg:-translate-x-12"
               >
@@ -758,7 +761,7 @@ const Index = () => {
 
 
       {/* CTA Section */}
-      <section className="relative py-20 overflow-hidden bg-gradient-to-r from-[#044b5a] via-[#056a7a] to-[#03a3a8]">
+      <section className="relative py-20 overflow-hidden bg-gradient-to-tr from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488]">
         {/* Decorative gradient blobs */}
         <div className="absolute top-0 left-0 w-72 h-72 bg-[#04bfbf] opacity-20 rounded-full blur-3xl -translate-x-1/3 -translate-y-1/3"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#a0e7e9] opacity-20 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
@@ -767,7 +770,7 @@ const Index = () => {
           <div data-aos="fade-up">
             {/* Title */}
             <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6 text-white">
-              Enroll in <span className="text-[#a0e7e9]">DrEduMed Anna Nagar</span> Today!
+              Enroll in <span className="text-[#fff]">DrEduMed Anna Nagar</span> Today!
               <span className="block">Ready to Kickstart Your Career?</span>
             </h2>
 
