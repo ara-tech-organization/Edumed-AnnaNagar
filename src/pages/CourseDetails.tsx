@@ -1302,9 +1302,11 @@ const CourseDetail = () => {
           <Button
             variant="ghost"
             onClick={() => navigate("/courses")}
-            className="mb-8 flex items-center gap-2 text-gray-600 hover:text-blue-600"
+            className="mb-8 flex items-center gap-2 text-gray-600 border border-gray-600 rounded-full px-4 py-2
+             transition-all duration-300
+             hover:bg-gray-600 hover:text-white"
           >
-            <ArrowLeft className="h-4 w-4" />
+            <ArrowLeft className="h-4 w-4 transition-all duration-300 group-hover:text-white" />
             Back to Courses
           </Button>
 
@@ -1503,7 +1505,6 @@ const CourseDetail = () => {
       </section>
 
       {/* FAQ Section */}
-      {/* FAQ Section */}
       <section className="relative py-28 bg-gray-50 overflow-hidden">
         <div className="container mx-auto px-6 lg:px-12">
           {/* Header */}
@@ -1575,7 +1576,7 @@ const CourseDetail = () => {
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.35, ease: "easeInOut" }}
-                        className="px-6 pb-6 text-gray-700 text-base leading-relaxed border-t border-gray-100"
+                        className="px-6 py-6 text-gray-700 text-base leading-relaxed border-t border-gray-100"
                       >
                         {item.answer}
                       </motion.div>

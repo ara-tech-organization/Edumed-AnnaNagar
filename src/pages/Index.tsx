@@ -295,10 +295,14 @@ const Index = () => {
             </p>
 
             <div className="flex justify-center">
-              <button className="px-6 py-3 bg-white text-primary font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
-                Enroll Courses
-                <FaArrowRight className="text-primary text-lg" />
-              </button>
+              <button
+      onClick={() => navigate("/courses")}
+      className="group px-6 py-3 bg-white text-primary font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 
+      hover:bg-primary hover:text-white"
+    >
+      Enroll Courses
+      <FaArrowRight className="text-primary text-lg transition-all duration-300 group-hover:text-white" />
+    </button>
             </div>
           </div>
         </div>
@@ -396,7 +400,7 @@ const Index = () => {
             {/* Button */}
             <button
               onClick={() => navigate("/about")}
-              className="inline-flex items-center bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-white shadow-md text-white font-medium px-6 py-3 rounded-full shadow-md hover:shadow-lg transition"
+              className="inline-flex items-center bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-white shadow-md text-white font-medium px-6 py-3 rounded-full shadow-md hover:shadow-lg hover:opacity-90 transition"
             >
               Learn More
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -410,7 +414,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           {/* Heading */}
           <div className="text-center mb-16" data-aos="fade-up">
-            <Badge className="mb-6 bg-primary/10 text-primary">
+            <Badge className="mb-6 bg-primary/10 text-primary font-semibold rounded-full px-4 py-1 transition-all duration-300 hover:bg-primary hover:text-white hover:border-primary cursor-pointer">
               Why Choose Dr. Edumed?
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -460,7 +464,7 @@ const Index = () => {
 
           {/* LEFT CONTENT */}
           <div className="lg:w-1/2 text-center lg:text-left" data-aos="fade-right">
-            <Badge className="mb-6 bg-primary/10 text-primary">
+            <Badge className="mb-6 bg-primary/10 text-primary hover:bg-primary hover:text-white hover:border-primary cursor-pointer">
               Featured Courses
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -582,7 +586,7 @@ const Index = () => {
                     <img
                       src={course.image}
                       alt={course.title}
-                      className="w-full h-[220px] sm:h-[240px] md:h-[260px] object-cover"
+                      className="w-full h-[220px] sm:h-[240px] md:h-[260px] object-cover rounded-2xl"
                     />
                     <div className="p-5">
                       <Badge className="mb-3 bg-primary/90 text-white">{course.tag}</Badge>
@@ -604,7 +608,7 @@ const Index = () => {
 
           {/* RIGHT CONTENT */}
           <div className="lg:w-1/2 text-center lg:text-left order-1 lg:order-2" data-aos="fade-left">
-            <Badge className="mb-6 bg-primary/10 text-primary">
+            <Badge className="mb-6 bg-primary/10 text-primary hover:bg-primary hover:text-white hover:border-primary cursor-pointer">
               Certification Courses
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -686,7 +690,7 @@ const Index = () => {
 
             {/* Right half - Carousel */}
             <div className="w-full lg:w-1/2">
-              <Badge className="mb-6 bg-primary/10 text-primary font-semibold uppercase rounded-md py-1 px-3">
+              <Badge className="mb-6 bg-primary/10 text-primary font-semibold uppercase rounded-md py-1 px-3 hover:bg-primary hover:text-white hover:border-primary cursor-pointer">
                 Student Testimonials
               </Badge>
               <h2 className="text-3xl font-bold mb-8 text-primary">
@@ -782,9 +786,11 @@ const Index = () => {
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-3 bg-white text-[#056a7a] font-semibold rounded-lg shadow-md hover:shadow-lg hover:bg-white/90 transition-all">
-                Enroll Now
-              </button>
+              <Link to="/contact">
+                <button className="px-8 py-3 bg-white text-[#056a7a] font-semibold rounded-lg shadow-md hover:shadow-lg hover:bg-white/90 transition-all">
+                  Enroll Now
+                </button>
+              </Link>
             </div>
           </div>
         </div>

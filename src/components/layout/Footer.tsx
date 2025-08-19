@@ -15,13 +15,13 @@ const Footer = () => {
             className="w-40 h-auto"
           /></Link>
           <div className="flex space-x-6">
-            <a href="#" className="hover:text-[#04bfbf] transition-colors">
+            <a href="https://www.facebook.com/dr.edumedannanagar" className="hover:text-[#04bfbf] transition-colors">
               <Facebook className="h-5 w-5" />
             </a>
             <a href="#" className="hover:text-[#04bfbf] transition-colors">
               <Globe className="h-5 w-5" />
             </a>
-            <a href="#" className="hover:text-[#04bfbf] transition-colors">
+            <a href="https://www.instagram.com/dr.edumedchennai/" className="hover:text-[#04bfbf] transition-colors">
               <Instagram className="h-5 w-5" />
             </a>
             <a href="#" className="hover:text-[#04bfbf] transition-colors">
@@ -34,10 +34,10 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2 text-white/80">
-            <li><Link to="/about" className="hover:text-[#04bfbf]">About Us</Link></li>
-            <li><Link to="/courses" className="hover:text-[#04bfbf]">Our Courses</Link></li>
-            <li><Link to="/internship" className="hover:text-[#04bfbf]">Internship Program</Link></li>
-            <li><Link to="/contact" className="hover:text-[#04bfbf]">Contact Us</Link></li>
+            <li><Link to="/about" className="hover:text-white">About Us</Link></li>
+            <li><Link to="/courses" className="hover:text-white">Our Courses</Link></li>
+            <li><Link to="/internship" className="hover:text-white">Internship Program</Link></li>
+            <li><Link to="/contact" className="hover:text-white">Contact Us</Link></li>
           </ul>
         </div>
 
@@ -75,18 +75,17 @@ const Footer = () => {
             <div className="flex items-start space-x-3">
               <MapPin className="h-5 w-5 mt-0.5 flex-shrink-0" />
               <p>
-                3rd Floor, 64, Variety Hall Rd,<br />
-                Town Hall, Coimbatore - 641001<br />
-                Tamil Nadu
+                New No.1, old No. C-52, Muvas Arcade, 2nd Floor 2nd Avenue, 1st Main Rd,<br /> C Block, Annanagar East,<br /> Chennai, Tamil Nadu 600030
+                
               </p>
             </div>
             <div className="flex items-center space-x-3">
               <Phone className="h-5 w-5" />
-              <span>97515 10000</span>
+              <span>99648 10000</span>
             </div>
             <div className="flex items-center space-x-3">
               <Mail className="h-5 w-5" />
-              <span>coimbatore@dredumed.com</span>
+              <span>chennai@dredumed.com</span>
             </div>
           </div>
         </div>

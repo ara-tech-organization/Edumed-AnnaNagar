@@ -416,6 +416,7 @@ const Courses = () => {
     },
   ];
 
+
   const filteredCourses =
     selectedCategory === "all"
       ? courses
@@ -464,31 +465,31 @@ const Courses = () => {
   return (
     <div>
       {/* Hero Section */}
-<section className="relative overflow-hidden py-16 lg:py-24 bg-gradient-to-br from-blue-50 via-white to-emerald-50">
-  {/* Background Image */}
-  <div
-    className="absolute inset-0 bg-cover bg-center"
-    style={{
-      backgroundImage: `url(${AboutUsBg})`,
-    }}
-  />
-  <div className="absolute inset-0 bg-white/60 backdrop-blur-sm" />
+      <section className="relative overflow-hidden py-16 lg:py-24 bg-gradient-to-br from-blue-50 via-white to-emerald-50">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${AboutUsBg})`,
+          }}
+        />
+        <div className="absolute inset-0 bg-white/60 backdrop-blur-sm" />
 
-  {/* Content Container */}
-  <div className="relative z-10 container mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center gap-12">
+        {/* Content Container */}
+        <div className="relative z-10 container mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center gap-12">
 
-    {/* Text Section */}
-    <div className="w-full md:w-6/12 space-y-6" data-aos="fade-right">
-      <span className="inline-block px-4 py-1 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500 text-white text-sm font-semibold shadow-md">
-        Explore & Learn
-      </span>
-      <h1 className="font-manrope text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
-        Our <span className="bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">Courses</span>
-      </h1>
-      <p className="text-lg lg:text-xl text-gray-700 leading-relaxed max-w-xl">
-        Global & Pan-India Internship & Career Opportunities — gain real-world experience, expand your skills, and build a thriving medical career.
-      </p>
-      {/* <div className="flex flex-wrap gap-4 pt-4">
+          {/* Text Section */}
+          <div className="w-full md:w-6/12 space-y-6" data-aos="fade-right">
+            <span className="inline-block px-4 py-1 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500 text-white text-sm font-semibold shadow-md">
+              Explore & Learn
+            </span>
+            <h1 className="font-manrope text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
+              Our <span className="bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">Courses</span>
+            </h1>
+            <p className="text-lg lg:text-xl text-gray-700 leading-relaxed max-w-xl">
+              Global & Pan-India Internship & Career Opportunities — gain real-world experience, expand your skills, and build a thriving medical career.
+            </p>
+            {/* <div className="flex flex-wrap gap-4 pt-4">
         <button className="px-6 py-3 bg-gradient-to-r from-blue-600 to-emerald-500 text-white rounded-lg shadow-lg hover:shadow-xl transition-all">
           View All Courses
         </button>
@@ -496,25 +497,25 @@ const Courses = () => {
           Learn More
         </button>
       </div> */}
-    </div>
+          </div>
 
-    {/* Image Section */}
-    <div className="w-full md:w-6/12 relative" data-aos="fade-left">
-      <div className="relative rounded-3xl overflow-hidden shadow-xl">
-        {/* <img
+          {/* Image Section */}
+          <div className="w-full md:w-6/12 relative" data-aos="fade-left">
+            <div className="relative rounded-3xl overflow-hidden shadow-xl">
+              {/* <img
           src={CourseDoctor}
           alt="Courses Illustration"
           className="w-full h-full object-cover"
         /> */}
-        {/* Decorative gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-      </div>
+              {/* Decorative gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+            </div>
 
-      {/* Floating Decorative Shape */}
-      <div className="absolute -top-6 -left-6 w-24 h-24 bg-gradient-to-br from-blue-500 to-emerald-400 rounded-full blur-3xl opacity-30 animate-pulse" />
-    </div>
-  </div>
-</section>
+            {/* Floating Decorative Shape */}
+            <div className="absolute -top-6 -left-6 w-24 h-24 bg-gradient-to-br from-blue-500 to-emerald-400 rounded-full blur-3xl opacity-30 animate-pulse" />
+          </div>
+        </div>
+      </section>
 
 
       {/* Features Section */}
@@ -594,11 +595,10 @@ const Courses = () => {
                     selectedCategory === category.id ? "default" : "outline"
                   }
                   onClick={() => setSelectedCategory(category.id)}
-                  className={`px-4 py-2 rounded-md border transition-all duration-200 ${
-                    selectedCategory === category.id
-                      ? "bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-white shadow-md"
-                      : "border-gray-300 text-gray-600 hover:border-blue-400 hover:text-blue-500 hover:bg-gray-50"
-                  }`}
+                  className={`px-4 py-2 rounded-md border transition-all duration-200 ${selectedCategory === category.id
+                    ? "bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-white shadow-md"
+                    : "border-gray-300 text-gray-600 hover:border-blue-400 hover:text-blue-500 hover:bg-gray-50"
+                    }`}
                 >
                   {category.name}
                 </Button>
@@ -608,12 +608,18 @@ const Courses = () => {
 
           {/* Course Grid */}
           <div className="space-y-12">
+            {selectedCategory !== "all" && (
+              <h2 className="text-3xl font-extrabold text-[#032c40] mb-8 text-center">
+                {
+                  categories.find((cat) => cat.id === selectedCategory)?.name
+                }
+              </h2>
+            )}
             {filteredCourses.map((course, index) => (
               <div
                 key={course.id}
-                className={`group flex flex-col lg:flex-row ${
-                  index % 2 !== 0 ? "lg:flex-row-reverse" : ""
-                } items-stretch gap-8 rounded-3xl overflow-hidden shadow-lg bg-white hover:shadow-2xl transition-all duration-500`}
+                className={`group flex flex-col lg:flex-row ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""
+                  } items-stretch gap-8 rounded-3xl overflow-hidden shadow-lg bg-white hover:shadow-2xl transition-all duration-500`}
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
                 onClick={() => navigate(`/course/${course.id}`)}
@@ -638,9 +644,14 @@ const Courses = () => {
 
                 {/* Content Section */}
                 <div className="flex flex-col justify-center lg:w-1/2 p-8 lg:p-12 bg-gradient-to-br from-white via-blue-50/30 to-emerald-50/30">
-                  <Badge className="mb-4 bg-blue-100 text-blue-700 font-medium px-3 py-1 rounded-full w-fit">
+                  <Badge
+                    className="mb-4 bg-blue-100 text-blue-700 font-medium px-3 py-1 rounded-full w-fit 
+  border border-blue-700 transition-all duration-300 
+  hover:bg-blue-700 hover:text-white cursor-pointer"
+                  >
                     {categories.find((cat) => cat.id === course.category)?.name}
                   </Badge>
+
 
                   <h3 className="text-2xl font-extrabold text-[#032c40] mb-4">
                     {course.title}
@@ -653,7 +664,7 @@ const Courses = () => {
                   <div>
                     <Button
                       size="lg"
-                      className="bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-white shadow-md"
+                      className="bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-white shadow-md shadow-lg hover:opacity-90 transition"
                     >
                       Learn More
                       <ArrowRight className="ml-2 h-5 w-5" />

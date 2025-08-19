@@ -31,7 +31,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      details: ["chennai@dredumed.com", "admissions@dredumed.com"],
+      details: ["chennai@dredumed.com"],
       available: "Response within 24 hours",
     },
     {
@@ -191,12 +191,12 @@ const Contact = () => {
           {/* Vibrant Contact Info */}
           <div className="flex flex-col gap-6">
             {[
-              { icon: Mail, title: "Email Us", details: "hello@yourbrand.com" },
-              { icon: Phone, title: "Call Us", details: "+91 98765 43210" },
+              { icon: Mail, title: "Email Us", details: "chennai@dredumed.com" },
+              { icon: Phone, title: "Call Us", details: "+91 99648 10000" },
               {
                 icon: MapPin,
                 title: "Visit Us",
-                details: "42 Dream Street, WonderCity",
+                details: "New No.1 , old No. C-52, Muvas Arcade, 2nd Floor 2nd Avenue, 1st Main Rd,C Block, Annanagar East,Chennai, Tamil Nadu 600030",
               },
             ].map((item, idx) => (
               <div
@@ -278,12 +278,12 @@ const Contact = () => {
 
         {/* Support Call-to-Action */}
         <div className="text-center mt-12" data-aos="fade-up">
-          <p className="text-gray-600 mb-4">
+          {/* <p className="text-gray-600 mb-4">
             Still have questions that we didn’t cover?
-          </p>
-          <button className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-white shadow-md font-semibold shadow-md hover:scale-[1.02] transition-transform">
+          </p> */}
+          {/* <button className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-white shadow-md font-semibold shadow-md hover:scale-[1.02] transition-transform">
             Contact Our Support Team
-          </button>
+          </button> */}
         </div>
       </div>
     </section>

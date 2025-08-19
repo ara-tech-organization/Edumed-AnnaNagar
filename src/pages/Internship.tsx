@@ -29,7 +29,7 @@ import {
 // Import images
 import heroImage from "@/assets/hero-medical.jpg";
 import educationBg from "@/assets/education-bg.jpg";
-import hero from "@/assets/"
+// import hero from "@/assets/"
 
 const Internship = () => {
   const programs = [
@@ -170,17 +170,16 @@ const Internship = () => {
             >
               <Button
                 size="lg"
+                onClick={() => {
+                  const element = document.getElementById("internshipForm");
+                  if (element) {
+                    element.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
                 className="bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 text-white font-semibold text-lg px-8 shadow-lg shadow-blue-500/30"
               >
                 Apply for Internship
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-primary hover:bg-white hover:text-primary font-semibold text-lg px-8 backdrop-blur-sm"
-              >
-                Download Brochure
               </Button>
             </div>
           </div>
@@ -251,7 +250,7 @@ const Internship = () => {
       <section className="section-padding bg-gradient-to-br from-blue-50 via-green-50 to-teal-50 relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16" data-aos="fade-up">
-            <Badge className="mb-6 bg-primary/10 text-primary">
+            <Badge className="mb-6 bg-primary/10 text-primary hover:text-white hover:border-primary cursor-pointer">
               Program Benefits
             </Badge>
             <h2 className="text-xl-heading mb-6 font-bold">
@@ -352,7 +351,7 @@ const Internship = () => {
         </div>
       </section> */}
 
-      <section className="section-padding bg-gradient-to-br from-blue-50 via-green-50 to-teal-50">
+      <section className="section-padding bg-gradient-to-br from-blue-50 via-green-50 to-teal-50" id="internshipForm">
         <div className="container mx-auto px-6 md:px-12">
           <div className="grid md:grid-cols-2 gap-10 items-center bg-white/70 rounded-2xl shadow-lg p-8 md:p-12 backdrop-blur-sm">
             {/* Left Side Illustration */}

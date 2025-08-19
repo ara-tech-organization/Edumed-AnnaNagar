@@ -155,7 +155,16 @@ const Volunteering = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4 mt-10">
-              <Button size="lg" className="bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-white shadow-md font-semibold px-8 py-4 shadow-lg hover:scale-105 transition-all flex items-center gap-2">
+              <Button
+                size="lg"
+                onClick={() => {
+                  const element = document.getElementById("volunteer-form");
+                  if (element) {
+                    element.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+                className="bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-white shadow-md font-semibold px-8 py-4 shadow-lg hover:scale-105 transition-all flex items-center gap-2"
+              >
                 Apply Now
                 <ArrowRight className="h-5 w-5" />
               </Button>
@@ -209,9 +218,18 @@ const Volunteering = () => {
               </div>
 
               <div className="mt-8">
-                <button className="bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-white shadow-md px-8 py-4 rounded-full shadow-lg hover:scale-105 transition-transform duration-300">
+                <button
+                  onClick={() => {
+                    const element = document.getElementById("volunteer-form");
+                    if (element) {
+                      element.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
+                  className="bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-white shadow-md px-8 py-4 rounded-full shadow-lg hover:scale-105 transition-transform duration-300"
+                >
                   Become a Volunteer
                 </button>
+
               </div>
             </div>
 
@@ -451,7 +469,7 @@ const Volunteering = () => {
         </div>
       </section>
 
-      <section className="relative min-h-screen bg-gray-100 flex items-center justify-center p-6">
+      <section className="relative min-h-screen bg-gray-100 flex items-center justify-center p-6" id='volunteer-form'>
         {/* Background Image */}
         <div className="absolute inset-0">
           <img

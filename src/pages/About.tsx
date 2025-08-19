@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Link } from 'react-router-dom';
 import {
   Award,
   Users,
@@ -111,7 +112,7 @@ const About = () => {
         {/* Content */}
         <div className="relative z-10 container mx-auto px-6 md:px-12">
           <div className="max-w-xl text-white" data-aos="fade-right">
-            <Badge className="mb-4 bg-white/20 text-white border-white/30">
+            <Badge className="mb-4 bg-white/20 text-white border-white/30 cursor-pointer">
               Our Story
             </Badge>
             <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
@@ -123,20 +124,29 @@ const About = () => {
             <p className="text-lg text-white/90 mb-8">
               Shaping the future of healthcare one student at a time.
             </p>
-            <button className="px-6 py-3 rounded-full font-semibold bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-white shadow-md shadow-lg hover:opacity-90 transition">
+            <button
+              onClick={() => {
+                const element = document.getElementById("aboutSection");
+                if (element) {
+                  element.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+              className="px-6 py-3 rounded-full font-semibold bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-white shadow-md shadow-lg hover:opacity-90 transition"
+            >
               Learn More
             </button>
+
           </div>
         </div>
       </section>
 
-      <section className="relative py-28 overflow-hidden bg-white bg-[radial-gradient(circle,_#e5e7eb_1px,_transparent_1px)] [background-size:20px_20px]">
+      <section className="relative py-28 overflow-hidden bg-white bg-[radial-gradient(circle,_#e5e7eb_1px,_transparent_1px)] [background-size:20px_20px]" id='aboutSection'>
         {/* Decorative Gradient Blobs */}
         <div className="absolute -top-32 -left-32 w-96 h-96 bg-gradient-to-br from-primary/10 to-emerald-200/20 rounded-full blur-3xl animate-spin-slow"></div>
         <div className="absolute -bottom-40 -right-32 w-[28rem] h-[28rem] bg-gradient-to-tl from-primary/10 to-emerald-200/20 rounded-full blur-3xl animate-spin-slow-reverse"></div>
 
         <div className="container mx-auto px-6 relative z-10 text-center">
-          <Badge className="mb-4 bg-primary/10 text-primary border border-primary/20">
+          <Badge className="mb-4 bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-white hover:border-primary cursor-pointer">
             Begin Your Journey
           </Badge>
 
@@ -168,9 +178,11 @@ const About = () => {
 
 
           <div className="mt-8">
-            <Button className="bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-white shadow-md px-8 py-4 rounded-full shadow-lg hover:scale-105 transition">
-              Explore Programs
-            </Button>
+            <Link to="/courses">
+              <Button className="bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-white shadow-md px-8 py-4 rounded-full shadow-lg hover:scale-105 transition">
+                Explore Programs
+              </Button>
+            </Link>
           </div>
         </div>
 
@@ -199,7 +211,7 @@ const About = () => {
         <div className="container mx-auto px-6 relative z-10">
           {/* Heading */}
           <div className="text-center mb-16" data-aos="fade-up">
-            <Badge className="mb-6 bg-white/20 text-white border-white/30">Our Core Values</Badge>
+            <Badge className="mb-6 bg-white/20 text-white border-white/30 cursor-pointer">Our Core Values</Badge>
             <h2 className="text-4xl font-extrabold mb-6 text-white">
               Values That Guide
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488]"> Our Mission</span>
@@ -246,7 +258,7 @@ const About = () => {
         <div className="container mx-auto px-6 relative z-10">
           {/* Heading */}
           <div className="text-center mb-16" data-aos="fade-up">
-            <Badge className="mb-6 bg-primary/10 text-primary border-primary/20">Who We Are</Badge>
+            <Badge className="mb-6 bg-primary/10 text-primary border-primary/20 hover:bg-primary hover:text-white hover:border-primary cursor-pointer">Who We Are</Badge>
             <h2 className="text-4xl font-extrabold mb-6 text-gray-900">Our Mission & Vision</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Driving excellence in education and healthcare through unwavering dedication to our values.
@@ -432,10 +444,12 @@ const About = () => {
               Launch your aesthetic career with hands-on, real-world internships designed to prepare you for success.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-[#056a7a] hover:bg-white/90 font-semibold text-lg px-8">
-                Explore Courses
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              <Link to="/courses">
+                <Button size="lg" className="bg-white text-[#056a7a] hover:bg-white/90 font-semibold text-lg px-8">
+                  Explore Courses
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
               {/* <Button
                 size="lg"
                 variant="outline"
