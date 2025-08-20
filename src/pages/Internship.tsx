@@ -371,52 +371,77 @@ const Internship = () => {
               <form className="grid gap-4">
                 {/* Candidate Name + Contact Number */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <input
-                    type="text"
-                    placeholder="Full Name"
-                    className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-400 outline-none"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Contact Number"
-                    className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-400 outline-none"
-                  />
+                  <div>
+                    <label className="block text-gray-700 font-medium mb-2">Full Name</label>
+                    <input
+                      type="text"
+                      className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-400 outline-none w-full"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-gray-700 font-medium mb-2">Contact Number</label>
+                    <input
+                      type="text"
+                      className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-400 outline-none w-full"
+                    />
+                  </div>
                 </div>
 
                 {/* Email */}
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-400 outline-none"
-                />
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2">Email Address</label>
+                  <input
+                    type="email"
+                    className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-400 outline-none w-full"
+                  />
+                </div>
 
                 {/* Course */}
-                <select className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-400 outline-none">
-                  <option>Select Course</option>
-                  <option>Course A</option>
-                  <option>Course B</option>
-                </select>
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2">Course</label>
+                  <select className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-400 outline-none w-full">
+                    <option>Select Course</option>
+                    <option>Master in Facial Injectables</option>
+                    <option>PG Diploma in Clinical Cosmetology</option>
+                    <option>Fellowship in Facial Aesthetics</option>
+                    <option>Workshop in Semi-Permanent Makeup (SPMU)</option>
+                    <option>Master in Hair Transplant</option>
+                    <option>PG Diploma in Facial Injectables</option>
+                    <option>Fellowship in Clinical Cosmetology</option>
+                    <option>Fellowship in Clinical Trichology</option>
+                  </select>
+                </div>
 
                 {/* Batch Start Date */}
-                <select className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-400 outline-none">
-                  <option>Select Batch</option>
-                  <option>Batch 1</option>
-                  <option>Batch 2</option>
-                </select>
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2">Batch Start Date</label>
+                  <select className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-400 outline-none w-full">
+                    <option>Select Batch</option>
+                    {/* <option>Batch 1</option>
+      <option>Batch 2</option> */}
+                  </select>
+                </div>
 
                 {/* Certificate Received */}
-                <select className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-400 outline-none">
-                  <option>Select</option>
-                  <option>Yes</option>
-                  <option>No</option>
-                </select>
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2">Certificate Received</label>
+                  <select className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-400 outline-none w-full">
+                    <option>Select</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                  </select>
+                </div>
 
                 {/* Internship Type */}
-                <select className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-400 outline-none">
-                  <option>Select Internship</option>
-                  <option>Type 1</option>
-                  <option>Type 2</option>
-                </select>
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2">Internship Type</label>
+                  <select className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-400 outline-none w-full">
+                    <option>Select Internship Type</option>
+                    <option>National</option>
+                    <option>International</option>
+                  </select>
+                </div>
 
                 {/* Submit Button */}
                 <button

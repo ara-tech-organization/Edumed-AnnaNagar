@@ -21,6 +21,23 @@ import ScrollToTop from "./components/ScrollToTop";
 // Layout
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
+import SemiPermanentMakeup from "./pages/CourseDetails/Semi-PermanentMakeup";
+import HydraFacial from "./pages/CourseDetails/Hydrafacial";
+import Injectables from "./pages/CourseDetails/Injectables";
+import CertifiCourseAdvSemiPermanentMakeup from "./pages/CourseDetails/Certifi-course-Semi_perma_makeup";
+import CertifiCourseSemiMakeup from "./pages/CourseDetails/Certifi_Course_Semi-Permanent-Makeup";
+import CertifiLaser from "./pages/CourseDetails/CertifiLaser";
+import ChemicalPeel from "./pages/CourseDetails/ChemicalPeel";
+import MediFacial from "./pages/CourseDetails/MediFacial";
+
+import HairTransplant from "./pages/CourseDetails/HairTransplant";
+import ClinicalCosmetology from "./pages/CourseDetails/ClinicalCosmetologys";
+import ClinicalTrichologys from "./pages/CourseDetails/ClinicalTrichology";
+import DipFacialInj from "./pages/CourseDetails/DiplomaFacialInjectables";
+import FaceInjection from "./pages/CourseDetails/FaceInjection";
+import FacialAesthetic from "./pages/CourseDetails/FacialAesthetics";
+import FellowCosmetology from "./pages/CourseDetails/FellowCosmetology";
+import SkinTechnicians from "./pages/CourseDetails/SkinTechnician";
 
 const queryClient = new QueryClient();
 
@@ -52,6 +69,25 @@ const App = () => {
                 <Route path="/course/:id" element={<CourseDetails />} />
                 <Route path="/volunteering" element={<Volunteering />} />
                 <Route path="/contact" element={<Contact />} />
+
+                <Route path="/semi-permanentmakeup" element={<SemiPermanentMakeup />} />
+                <Route path="/hydra-facial" element={<HydraFacial />} />
+                <Route path="/injectables" element={<Injectables />} />
+                <Route path="/adv-semipermanent-makeup" element={<CertifiCourseAdvSemiPermanentMakeup />} />
+                <Route path="/semi-makeup" element={<CertifiCourseSemiMakeup />} />
+                <Route path="/laser" element={<CertifiLaser />} />
+                <Route path="/chemicalpeel" element={<ChemicalPeel />} />
+                <Route path="/medifacial" element={<MediFacial />} />
+
+                <Route path="/ClinicalCosmetology" element={<ClinicalCosmetology />} />
+                  <Route path="/ClinicalTrichologys" element={<ClinicalTrichologys />} />
+                  <Route path="/DiplomaFacialInjection" element={<DipFacialInj />} />
+                  <Route path="/FaceInjection" element={<FaceInjection />} />
+                  <Route path="/FacialAesthetic" element={<FacialAesthetic />} />
+                  <Route path="/FellowCosmetology" element={<FellowCosmetology />} />
+                  <Route path="/SkinTechnicians" element={<SkinTechnicians />} />
+                 <Route path="/HairTransplant" element={<HairTransplant />} />
+
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </main>

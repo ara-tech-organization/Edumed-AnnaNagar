@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -29,6 +30,8 @@ import volunteerModel from "@/assets/volunteer 1.jpeg"
 import formBg from "@/assets/formbg.jpg"
 
 const Volunteering = () => {
+  const [surgeryHistory, setSurgeryHistory] = useState("");
+  const [allergyHistory, setAllergyHistory] = useState("");
   const services = [
     { icon: Droplets, title: "Lip Fillers", desc: "Enhance lip volume and definition" },
     { icon: FlaskConical, title: "PRP for Face", desc: "Platelet-rich plasma facial treatments" },
@@ -509,57 +512,129 @@ const Volunteering = () => {
               ))}
             </div> */}
 
-            <h3 className="text-3xl font-semibold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488]">Application Form</h3>
+            <h3 className="text-3xl font-semibold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488]">
+              Application Form
+            </h3>
             <p className="text-gray-500 mb-8">Start your volunteer journey today</p>
 
             <form className="space-y-6">
-              <input type="text" placeholder="Full Name" className="w-full border rounded-lg px-4 py-4 focus:ring-2 focus:ring-primary/50" />
-              <input type="email" placeholder="Email" className="w-full border rounded-lg px-4 py-4 focus:ring-2 focus:ring-primary/50" />
+              {/* Full Name */}
+              <div>
+                <label className="block text-gray-700 font-medium mb-2">Full Name</label>
+                <input
+                  type="text"
+                  className="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary/50"
+                />
+              </div>
 
+              {/* Email */}
+              <div>
+                <label className="block text-gray-700 font-medium mb-2">Email</label>
+                <input
+                  type="email"
+                  className="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary/50"
+                />
+              </div>
+
+              {/* Age & Contact */}
               <div className="grid grid-cols-2 gap-6">
-                <input type="number" placeholder="Age" className="w-full border rounded-lg px-4 py-4 focus:ring-2 focus:ring-primary/50" />
-                <input type="tel" placeholder="Contact Number" className="w-full border rounded-lg px-4 py-4 focus:ring-2 focus:ring-primary/50" />
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2">Age</label>
+                  <input
+                    type="number"
+                    className="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary/50"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2">Contact Number</label>
+                  <input
+                    type="tel"
+                    className="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary/50"
+                  />
+                </div>
               </div>
 
               {/* Gender */}
-              <select className="w-full border rounded-lg px-4 py-4 focus:ring-2 focus:ring-primary/50">
-                <option>Select Gender</option>
-                <option>Male</option>
-                <option>Female</option>
-                <option>Other</option>
-                <option>Prefer not to say</option>
-              </select>
+              <div>
+                <label className="block text-gray-700 font-medium mb-2">Gender</label>
+                <select className="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary/50">
+                  <option>Select Gender</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Other</option>
+                  <option>Prefer not to say</option>
+                </select>
+              </div>
 
               {/* Service of Interest */}
-              <select className="w-full border rounded-lg px-4 py-4 focus:ring-2 focus:ring-primary/50">
-                <option>Select Service of Interest</option>
-                {services.map((service, idx) => (
-                  <option key={idx} value={service.title}>
-                    {service.title}
-                  </option>
-                ))}
-              </select>
+              <div>
+                <label className="block text-gray-700 font-medium mb-2">Service of Interest</label>
+                <select className="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary/50">
+                  <option>Select Service</option>
+                  {services.map((service, idx) => (
+                    <option key={idx} value={service.title}>
+                      {service.title}
+                    </option>
+                  ))}
+                </select>
+              </div>
 
               {/* Medical History Heading */}
-              <h4 className="text-lg font-semibold mt-4">Medical History</h4>
+              <h4 className="text-lg font-semibold mt-6">Medical History</h4>
 
               {/* Surgery History */}
-              <select className="w-full border rounded-lg px-4 py-4 focus:ring-2 focus:ring-primary/50">
-                <option>Have you undergone surgeries before?</option>
-                <option>Yes</option>
-                <option>No</option>
-              </select>
+              <div>
+                <label className="block text-gray-700 font-medium mb-2">Have you undergone surgeries before?</label>
+                <select
+                  className="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary/50"
+                  value={surgeryHistory}
+                  onChange={(e) => setSurgeryHistory(e.target.value)}
+                >
+                  <option value="">Select</option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+
+              {surgeryHistory === "Yes" && (
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2">Please specify the surgery details</label>
+                  <input
+                    type="text"
+                    className="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary/50"
+                  />
+                </div>
+              )}
 
               {/* Allergy History */}
-              <select className="w-full border rounded-lg px-4 py-4 focus:ring-2 focus:ring-primary/50">
-                <option>Do you have any allergies?</option>
-                <option>Yes</option>
-                <option>No</option>
-              </select>
+              <div>
+                <label className="block text-gray-700 font-medium mb-2">Do you have any allergies?</label>
+                <select
+                  className="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary/50"
+                  value={allergyHistory}
+                  onChange={(e) => setAllergyHistory(e.target.value)}
+                >
+                  <option value="">Select</option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
 
+              {allergyHistory === "Yes" && (
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2">Please specify your allergies</label>
+                  <input
+                    type="text"
+                    className="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary/50"
+                  />
+                </div>
+              )}
+
+              {/* Submit */}
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-white shadow-md py-4 rounded-lg font-semibold text-lg shadow-md hover:shadow-lg hover:scale-[1.02] transition-all"
+                className="w-full bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-white shadow-md py-4 rounded-lg font-semibold text-lg hover:shadow-lg hover:scale-[1.02] transition-all"
               >
                 Submit Application
               </button>

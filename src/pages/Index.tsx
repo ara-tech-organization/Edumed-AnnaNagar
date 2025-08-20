@@ -50,11 +50,13 @@ import CertificateInjectables from "@/assets/Certificate-Injectables.png";
 import MediFacial from "@/assets/Medi-Facial.png";
 import ChemicalPeel from "@/assets/Chemical-Peel.png";
 import Lasers from "@/assets/Lasers.png";
-
+import bannerImage from "@/assets/edumed-laon-BPmkpsdI.webp"
 import bgImage from "@/assets/hero-medical.jpg"
 import { FaArrowRight } from "react-icons/fa";
 
+
 import { useNavigate } from "react-router-dom";
+import FormModal from "./FormModal";
 
 const Index = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
@@ -62,6 +64,7 @@ const Index = () => {
   const [swiperRef, setSwiperRef] = useState(null);
   const [swiperRef1, setSwiperRef1] = useState(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const logos = [logo1, logo2, logo3, logo4, logo5];
 
 
@@ -296,13 +299,13 @@ const Index = () => {
 
             <div className="flex justify-center">
               <button
-      onClick={() => navigate("/courses")}
-      className="group px-6 py-3 bg-white text-primary font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 
+                onClick={() => navigate("/courses")}
+                className="group px-6 py-3 bg-white text-primary font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 
       hover:bg-primary hover:text-white"
-    >
-      Enroll Courses
-      <FaArrowRight className="text-primary text-lg transition-all duration-300 group-hover:text-white" />
-    </button>
+              >
+                Enroll Courses
+                <FaArrowRight className="text-primary text-lg transition-all duration-300 group-hover:text-white" />
+              </button>
             </div>
           </div>
         </div>
@@ -761,6 +764,19 @@ const Index = () => {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="relative w-full px-8 py-8">
+        {/* Banner Image */}
+        <img
+          src={bannerImage} 
+          alt="Loan Assistance Banner"
+          className="w-full h-auto object-cover rounded-lg cursor-pointer"
+          onClick={() => setIsModalOpen(true)} 
+        />
+
+        {/* Form Modal */}
+        <FormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       </section>
 
 
