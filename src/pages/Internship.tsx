@@ -82,17 +82,17 @@ const Internship = () => {
       icon: GraduationCap,
       title: "Expert Mentorship",
       description:
-        "Work directly with board-certified physicians and specialists",
+        "Learn directly from board-certified specialists.",
     },
     {
       icon: Building,
       title: "State-of-Art Facilities",
-      description: "Access to cutting-edge medical technology and equipment",
+      description: "Train with advanced medical technologies.",
     },
     {
       icon: Users,
       title: "Collaborative Learning",
-      description: "Learn alongside diverse, talented medical professionals",
+      description: "Work alongside peers and professionals from diverse fields.",
     },
     {
       icon: Star,
@@ -145,9 +145,9 @@ const Internship = () => {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              Launch Your Medical Career with
+              Kickstart Your Medical Career with 
               <span className="block bg-gradient-to-r from-blue-300 via-green-200 to-teal-300 bg-clip-text text-transparent animate-gradient-slow">
-                Premier Clinical Training
+                World-Class Clinical Internships
               </span>
             </h1>
 
@@ -157,9 +157,7 @@ const Internship = () => {
               data-aos="fade-up"
               data-aos-delay="300"
             >
-              Gain hands-on experience, expert mentorship, and direct access to
-              cutting-edge medical facilities — all in one transformative
-              program designed to set you apart in the healthcare industry.
+              Gain real-world exposure, guided mentorship, and access to advanced medical facilities — all in one program designed to elevate your career in the healthcare and aesthetics industry.
             </p>
 
             {/* Buttons */}
@@ -178,7 +176,7 @@ const Internship = () => {
                 }}
                 className="bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 text-white font-semibold text-lg px-8 shadow-lg shadow-blue-500/30"
               >
-                Apply for Internship
+                Apply Now for Internship
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
@@ -261,9 +259,7 @@ const Internship = () => {
             </h2>
 
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-              Our internship program offers unparalleled advantages to
-              jump-start your medical career with comprehensive training and
-              professional development.
+              Our internships offer unmatched benefits to help you stand out:
             </p>
           </div>
 
@@ -365,7 +361,7 @@ const Internship = () => {
                 Join Us as an Intern!
               </h2>
               <p className="text-gray-600 mb-6">
-                Complete this form and we'll respond as required
+                Fill out the form to begin your journey with Dr. EduMed
               </p>
 
               <form className="grid gap-4">

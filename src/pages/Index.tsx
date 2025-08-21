@@ -94,13 +94,13 @@ const Index = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Dr. Sarah Johnson",
-      role: "Resident Physician",
+      name: "Dr. Meera",
+      role: "Medical Student",
       image: "",
       rating: 5,
       content:
-        "The internship program at Dr. Edumed has been transformative. The hands-on experience and mentorship I received here shaped my medical career.",
-      location: "New York Medical Center",
+        "Dr. EduMed transformed my career. The hands-on training and expert faculty gave me the confidence to start my own practice in aesthetics.",
+      location: "Chennai",
     },
     {
       id: 2,
@@ -220,10 +220,10 @@ const Index = () => {
 
 
   const stats = [
-    { number: 15000, suffix: "+", label: "Graduates", icon: Users },
-    { number: 500, suffix: "+", label: "Expert Faculty", icon: Award },
-    { number: 200, suffix: "+", label: "Courses", icon: BookOpen },
-    { number: 98, suffix: "%", label: "Success Rate", icon: Star },
+    { number: 2450, suffix: "+", label: "Students Trained", icon: Users },
+    { number: 200, suffix: "+", label: "Expert Faculty Members", icon: Award },
+    { number: 90, suffix: "+", label: "Specialized Courses", icon: BookOpen },
+    { number: 45, suffix: "%", label: "Average Career Growth in Alumni", icon: Star },
   ];
 
   const specialties = [
@@ -278,23 +278,21 @@ const Index = () => {
         <div className="flex justify-center items-center text-center">
           <div className="lg:w-full z-10 space-y-6 max-w-4xl">
             <h1
-              className="text-2xl lg:text-7xl font-bold leading-tight text-white max-w-6xl mx-auto"
+              className="text-2xl lg:text-5xl font-bold leading-tight text-white max-w-7xl mx-auto"
 
             >
-              Welcome to DrEduMed Anna Nagar!
+              Welcome to Dr. EduMed – Anna Nagar
             </h1>
 
             <h4
               className="text-xl lg:text-4xl font-bold leading-tight text-white max-w-5xl mx-auto"
 
             >
-              Your Path to a Successful Career in Medical & Aesthetics
+              Empowering Your Future in Medical & Aesthetic Careers
             </h4>
 
             <p className="text-lg opacity-90 text-white">
-              Are you looking to expand your skills in the growing field of aesthetics?
-              Join DrEduMed’s expert-led programs in Anna Nagar and become a certified
-              professional in medical aesthetics.
+              Dreaming of a successful career in Aesthetics and Medical Sciences? Dr. EduMed Anna Nagar offers world-class training, hands-on practice, and internationally recognized certifications to help you achieve your professional goals.
             </p>
 
             <div className="flex justify-center">
@@ -303,7 +301,7 @@ const Index = () => {
                 className="group px-6 py-3 bg-white text-primary font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 
       hover:bg-primary hover:text-white"
               >
-                Enroll Courses
+                Enroll Now
                 <FaArrowRight className="text-primary text-lg transition-all duration-300 group-hover:text-white" />
               </button>
             </div>
@@ -380,7 +378,7 @@ const Index = () => {
           <div data-aos="fade-left" className="order-2">
             {/* Heading with underline */}
             <h2 className="text-3xl md:text-4xl font-bold mb-4 relative inline-block text-center">
-              About DrEduMed Anna Nagar Chennai
+              About Dr. EduMed Anna Nagar
               <img
                 src={underlineSvg}
                 alt="underline"
@@ -390,14 +388,11 @@ const Index = () => {
 
             {/* Paragraphs */}
             <p className="text-lg text-gray-600 mb-6 mt-4">
-              DrEduMed is a prestigious institution dedicated to providing world-class
-              aesthetic training. Our Anna Nagar Chennai branch offers comprehensive
-              programs that cater to both beginners and professionals looking to refine
-              their skills.
+              At Dr. EduMed, we’re more than just a training institute — we’re a community of medical and aesthetic experts shaping the future of healthcare professionals.
+              Our programs combine theory with advanced hands-on training, ensuring you graduate with the skills and confidence to thrive in the fast-growing aesthetics and wellness industry.
             </p>
             <p className="text-lg text-gray-600 mb-8">
-              With expert trainers and state-of-the-art facilities, we ensure that our
-              students are prepared to excel in the field of aesthetics.
+              With affiliations to globally recognized bodies, we provide education that is credible, future-focused, and industry ready.
             </p>
 
             {/* Button */}
@@ -769,10 +764,10 @@ const Index = () => {
       <section className="relative w-full px-8 py-8">
         {/* Banner Image */}
         <img
-          src={bannerImage} 
+          src={bannerImage}
           alt="Loan Assistance Banner"
           className="w-full h-auto object-cover rounded-lg cursor-pointer"
-          onClick={() => setIsModalOpen(true)} 
+          onClick={() => setIsModalOpen(true)}
         />
 
         {/* Form Modal */}
@@ -790,14 +785,13 @@ const Index = () => {
           <div data-aos="fade-up">
             {/* Title */}
             <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6 text-white">
-              Enroll in <span className="text-[#fff]">DrEduMed Anna Nagar</span> Today!
-              <span className="block">Ready to Kickstart Your Career?</span>
+              🎓 Step into the world of<span className="text-[#fff]"> Aesthetics with confidence</span> Today!
+              <span className="block"></span>
             </h2>
 
             {/* Description */}
             <p className="text-lg md:text-xl text-white/80 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Join the DrEduMed Anna Nagar branch and gain access to industry-leading aesthetic courses.
-              Start your journey today and be part of the fastest-growing field in medical aesthetics.
+              Enroll at Dr. EduMed Anna Nagar today – Your career in medical aesthetics starts here!
             </p>
 
             {/* Buttons */}

@@ -80,13 +80,13 @@ const App = () => {
                 <Route path="/medifacial" element={<MediFacial />} />
 
                 <Route path="/ClinicalCosmetology" element={<ClinicalCosmetology />} />
-                  <Route path="/ClinicalTrichologys" element={<ClinicalTrichologys />} />
-                  <Route path="/DiplomaFacialInjection" element={<DipFacialInj />} />
-                  <Route path="/FaceInjection" element={<FaceInjection />} />
-                  <Route path="/FacialAesthetic" element={<FacialAesthetic />} />
-                  <Route path="/FellowCosmetology" element={<FellowCosmetology />} />
-                  <Route path="/SkinTechnicians" element={<SkinTechnicians />} />
-                 <Route path="/HairTransplant" element={<HairTransplant />} />
+                <Route path="/ClinicalTrichologys" element={<ClinicalTrichologys />} />
+                <Route path="/DiplomaFacialInjection" element={<DipFacialInj />} />
+                <Route path="/FaceInjection" element={<FaceInjection />} />
+                <Route path="/FacialAesthetic" element={<FacialAesthetic />} />
+                <Route path="/FellowCosmetology" element={<FellowCosmetology />} />
+                <Route path="/SkinTechnicians" element={<SkinTechnicians />} />
+                <Route path="/HairTransplant" element={<HairTransplant />} />
 
                 <Route path="*" element={<NotFound />} />
               </Routes>
@@ -94,7 +94,7 @@ const App = () => {
 
             {/* Floating WhatsApp */}
             <a
-              href="https://wa.me/9199648 10000"
+              href="https://wa.me/919964810000"
               target="_blank"
               rel="noopener noreferrer"
               className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white px-3 py-2 rounded-full shadow-lg transition-transform transform hover:scale-110"

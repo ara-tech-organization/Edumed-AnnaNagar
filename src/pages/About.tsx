@@ -26,33 +26,33 @@ const About = () => {
   const values = [
     {
       icon: Heart,
-      title: "In-Depth Expert Training",
-      description: "Comprehensive, hands-on training led by industry experts."
+      title: "Expert-Led Training ",
+      description: "Real-world learning guided by top industry professionals."
     },
     {
       icon: Award,
-      title: "Govt. & International Accredited Certificate",
-      description: "Recognized certifications to enhance your professional credibility."
+      title: "Global & Govt. Accreditation ",
+      description: "Certifications recognized nationally and internationally."
     },
     {
       icon: Shield,
-      title: "Guaranteed Placement & Refund Policy",
-      description: "Confidence in your career with assured placement and refund options."
+      title: "Placement & Career Security ",
+      description: "Guaranteed placements and refund assurance."
     },
     {
       icon: Target,
-      title: "Medico-Legal Expert & Vendor Assist",
-      description: "Guidance on legal matters and vendor partnerships to support your journey."
+      title: "Legal & Vendor Guidance ",
+      description: "Support for medico-legal compliance and vendor tie-ups."
     },
     {
       icon: Rocket,
-      title: "Business Launch Support",
-      description: "Help to successfully start, scale, and sustain your aesthetic practice."
+      title: "Practice Launch Assistance ",
+      description: "End-to-end guidance for setting up successful clinics."
     },
     {
       icon: Globe,
-      title: "Lifelong Alumni Access",
-      description: "Stay connected, upskill and grow through our lifetime alumni support."
+      title: "Lifelong Alumni Network ",
+      description: "Continuous support and upskilling opportunities."
     }
   ];
 
@@ -116,13 +116,13 @@ const About = () => {
               Our Story
             </Badge>
             <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
-              Two decades of{" "}
+              Over 20 Years of{" "}
               <span className="bg-gradient-to-r from-emerald-300 via-white to-emerald-400 bg-clip-text text-transparent animate-gradient-x">
-                excellence
+                excellence 
               </span>
             </h2>
             <p className="text-lg text-white/90 mb-8">
-              Shaping the future of healthcare one student at a time.
+              At Dr. EduMed, we’ve spent two decades shaping the future of healthcare—one student at a time. With a strong foundation in both academic excellence and hands-on training, our academy continues to set new benchmarks in medical and aesthetic education.
             </p>
             <button
               onClick={() => {
@@ -151,18 +151,19 @@ const About = () => {
           </Badge>
 
           <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
-            Begin Your Journey to Excellence in <span className="text-primary">Aesthetic Medicine</span>
+           Begin Your Journey Towards <span className="text-primary">Expertise in Aesthetic Medicine</span>
           </h2>
-
+            {/* <p className="text-xl md:text-xl leading-tight mb-6">Dr. EduMed Medical & Aesthetic Academy stands as a trusted leader in training healthcare professionals for success in aesthetic medicine.</p> */}
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-emerald-500 rounded-full mx-auto mb-8"></div>
 
           <div className="space-y-6 max-w-4xl mx-auto">
             {[
               "Dr. EduMed Medical & Aesthetic Training Academy stands as a leading institution committed to providing top-tier education and hands-on training in the field of medical aesthetics.",
-              "Our comprehensive programs cover a wide range of treatments such as Botox, dermal fillers, laser therapies, and skin rejuvenation techniques.",
-              "Guided by a team of seasoned medical experts specializing in aesthetics, we prepare licensed medical practitioners to excel in this rapidly growing industry.",
-              "With the increasing demand for qualified aesthetic doctors, our advanced training ensures you are fully equipped to meet the needs of today’s beauty and wellness market.",
-              "Unlike typical educational institutions, Dr. EduMed offers exclusive, scientifically-driven courses designed specifically for medical professionals who aim to advance their skills and achieve success in aesthetic medicine."
+              "Comprehensive curriculum covering Botox, dermal fillers, advanced laser therapies, and skin rejuvenation techniques.",
+              "Training led by senior industry specialists with years of experience in clinical aesthetics.",
+              "Industry-driven programs designed to meet the growing demand for skilled aesthetic doctors worldwide.",
+              "Scientifically structured modules tailored exclusively for licensed medical professionals.",
+              "Practical, hands-on training that ensures real-world application and career readiness."
             ].map((point, index) => (
               <div
                 key={index}
@@ -217,8 +218,7 @@ const About = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488]"> Our Mission</span>
             </h2>
             <p className="text-lg text-white/80 max-w-2xl mx-auto">
-              These fundamental principles shape every aspect of our medical education
-              and guide our students toward becoming exemplary healthcare professionals.
+             We are committed to preparing tomorrow’s leaders in medical aesthetics through principles that inspire trust, quality, and innovation.
             </p>
           </div>
 
@@ -282,7 +282,7 @@ const About = () => {
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900">Our Mission</h3>
               <p className="text-gray-600 leading-relaxed">
-                We deliver high-quality, internationally benchmarked medical and aesthetic training through cutting-edge programs focused on an expert-led, practical approach. Our mission is to cultivate a community of ethically sound, competent, and confident professionals equipped with the skills to excel in their fields.
+                To provide internationally benchmarked medical and aesthetic training with a focus on practical, evidence-based learning—empowering healthcare professionals to deliver safe, ethical, and effective treatments.
               </p>
             </div>
 
@@ -300,7 +300,7 @@ const About = () => {
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900">Our Vision</h3>
               <p className="text-gray-600 leading-relaxed">
-                Our vision is to be a globally recognized center of excellence in medical and aesthetic education. We strive to drive innovation, uphold professionalism, and foster transformative learning that empowers the next generation of skilled and ethical professionals.
+                To be a globally recognized hub for innovation and excellence in aesthetic medicine—driving professional growth, ethical practice, and transformative learning for future medical leaders.
               </p>
             </div>
           </div>
@@ -441,7 +441,7 @@ const About = () => {
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488]">Career-Focused Training</span>
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Launch your aesthetic career with hands-on, real-world internships designed to prepare you for success.
+              Ready to transform your career? At Dr. EduMed, you don’t just study—you experience real-world practice through clinical internships, expert mentorship, and globally accredited programs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/courses">
