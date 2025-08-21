@@ -169,20 +169,38 @@ const Contact = () => {
             </p>
 
             <form className="space-y-5">
-              {["Your Name", "Email Address"].map((placeholder, i) => (
+              {["Your Name", "Email Address", "Phone Number"].map((placeholder, i) => (
                 <input
                   key={i}
                   className="w-full p-4 rounded-xl bg-white border border-gray-200 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-300 transition-all"
                   placeholder={placeholder}
-                  type={placeholder.includes("Email") ? "email" : "text"}
+                  type={
+                    placeholder.includes("Email")
+                      ? "email"
+                      : placeholder.includes("Phone")
+                        ? "tel"
+                        : "text"
+                  }
+                  required
+                  {...(placeholder.includes("Phone") && {
+                    pattern: "[0-9]{10}",
+                    maxLength: 10,
+                    title: "Enter a valid 10-digit phone number",
+                  })}
                 />
               ))}
+
               <textarea
                 rows={4}
                 className="w-full p-4 rounded-xl bg-white border border-gray-200 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-300 transition-all"
                 placeholder="Your Message"
+                required
               ></textarea>
-              <button className="w-full py-3 rounded-xl bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-white shadow-md font-semibold shadow-md hover:scale-[1.02] transition-all">
+
+              <button
+                type="submit"
+                className="w-full py-3 rounded-xl bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-white shadow-md font-semibold hover:scale-[1.02] transition-all"
+              >
                 Send Message
               </button>
             </form>
@@ -218,75 +236,100 @@ const Contact = () => {
         </div>
       </section>
 
-        <section className="py-20 bg-gradient-to-br from-white via-white to-emerald-50/30 relative overflow-hidden">
-      {/* Decorative blobs */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-emerald-300/20 rounded-full blur-[100px] -z-10"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-300/20 rounded-full blur-[120px] -z-10"></div>
-
-      <div className="container mx-auto px-4 relative">
-        {/* Section Heading */}
-        <div className="text-center mb-16" data-aos="fade-up">
-          <span className="inline-block px-4 py-1 rounded-full bg-gradient-to-tr from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-sm font-semibold tracking-wide mb-4">
-            Frequently Asked Questions
-          </span>
-          <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
-            Common Questions
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488]">
-              {" "}
-              & Answers
-            </span>
+      <section className="w-full py-16 bg-gray-50">
+        <div className="container mx-auto px-6 text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Find Us on the Map
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Find quick answers to the most common queries about our programs and services.
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Visit our campus or clinic using the map below. We're easily accessible
+            and look forward to seeing you!
           </p>
         </div>
 
-        {/* FAQ List */}
-        <div className="max-w-3xl mx-auto divide-y divide-gray-200 rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-white/70 backdrop-blur-sm">
-          {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className={`group p-6 transition-all duration-300 ${
-                openIndex === index
+        {/* Full Width Map */}
+        <div className="w-full h-[500px] px-12 py-8">
+          <iframe
+            title="Google Map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.2254274911306!2d80.2212563745483!3d13.084894812385318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52653b442248f9%3A0xb7dde82d3be6a79d!2sDr.EduMed%20-%20Anna%20Nagar%20Chennai!5e0!3m2!1sen!2sin!4v1755774754413!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="rounded-lg shadow-lg"
+          ></iframe>
+        </div>
+      </section>
+
+      <section className="py-20 bg-gradient-to-br from-white via-white to-emerald-50/30 relative overflow-hidden">
+        {/* Decorative blobs */}
+        <div className="absolute top-0 left-0 w-72 h-72 bg-emerald-300/20 rounded-full blur-[100px] -z-10"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-300/20 rounded-full blur-[120px] -z-10"></div>
+
+        <div className="container mx-auto px-4 relative">
+          {/* Section Heading */}
+          <div className="text-center mb-16" data-aos="fade-up">
+            <span className="inline-block px-4 py-1 rounded-full bg-gradient-to-tr from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-sm font-semibold tracking-wide mb-4">
+              Frequently Asked Questions
+            </span>
+            <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
+              Common Questions
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488]">
+                {" "}
+                & Answers
+              </span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Find quick answers to the most common queries about our programs and services.
+            </p>
+          </div>
+
+          {/* FAQ List */}
+          <div className="max-w-3xl mx-auto divide-y divide-gray-200 rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-white/70 backdrop-blur-sm">
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className={`group p-6 transition-all duration-300 ${openIndex === index
                   ? "bg-gradient-to-r from-emerald-50 to-indigo-50"
                   : ""
-              }`}
-              data-aos=""
-              data-aos-delay={index * 100}
-            >
-              <button
-                onClick={() => toggleFAQ(index)}
-                className="flex justify-between items-center w-full font-semibold text-gray-900 text-lg focus:outline-none"
-              >
-                {faq.question}
-                <span
-                  className={`ml-4 transition-transform ${
-                    openIndex === index ? "rotate-45 text-emerald-400" : "text-gray-400"
                   }`}
+                data-aos=""
+                data-aos-delay={index * 100}
+              >
+                <button
+                  onClick={() => toggleFAQ(index)}
+                  className="flex justify-between items-center w-full font-semibold text-gray-900 text-lg focus:outline-none"
                 >
-                  +
-                </span>
-              </button>
-              {openIndex === index && (
-                <p className="mt-4 text-gray-600 leading-relaxed">
-                  {faq.answer}
-                </p>
-              )}
-            </div>
-          ))}
-        </div>
+                  {faq.question}
+                  <span
+                    className={`ml-4 transition-transform ${openIndex === index ? "rotate-45 text-emerald-400" : "text-gray-400"
+                      }`}
+                  >
+                    +
+                  </span>
+                </button>
+                {openIndex === index && (
+                  <p className="mt-4 text-gray-600 leading-relaxed">
+                    {faq.answer}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
 
-        {/* Support Call-to-Action */}
-        <div className="text-center mt-12" data-aos="fade-up">
-          {/* <p className="text-gray-600 mb-4">
+          {/* Support Call-to-Action */}
+          <div className="text-center mt-12" data-aos="fade-up">
+            {/* <p className="text-gray-600 mb-4">
             Still have questions that we didn’t cover?
           </p> */}
-          {/* <button className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-white shadow-md font-semibold shadow-md hover:scale-[1.02] transition-transform">
+            {/* <button className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] text-white shadow-md font-semibold shadow-md hover:scale-[1.02] transition-transform">
             Contact Our Support Team
           </button> */}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       {/* Map & Location */}
       {/* <section className="section-padding bg-white">
