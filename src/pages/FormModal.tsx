@@ -6,13 +6,6 @@ interface FormModalProps {
 }
 
 const FormModal: React.FC<FormModalProps> = ({ isOpen, onClose }) => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    course: "",
-    message: "",
-  });
 
   const courses = [
     "Fellowship in Clinical Cosmetology",
@@ -33,6 +26,13 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, onClose }) => {
     "Diploma in Aesthetic Skin Technician",
   ];
 
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    course: "",
+    message: "",
+  });
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -40,10 +40,54 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, onClose }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    onClose(); // close modal after submit
+
+    // Prepare payload for API (map lowercase -> API required fields)
+    const payload = {
+      Name: formData.name,
+      email: formData.email,
+      mobile: formData.phone,
+      Course: formData.course,
+      Message: formData.message,
+    };
+
+    console.log("Submitting form data:", payload); // ✅ log values
+
+    try {
+      const res = await fetch(
+        "https://schoolcommunication-gmdtekepd3g3ffb9.canadacentral-01.azurewebsites.net/api/postMSMSForm/chennaiDredumedGetInTouch",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer 123",
+          },
+          body: JSON.stringify(payload),
+        }
+      );
+
+      const data = await res.json();
+      console.log("API Response:", data);
+
+      if (!data.error) {
+        alert("✅ " + data.message);
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          course: "",
+          message: "",
+        });
+        onClose(); // close modal after submit
+      } else {
+        alert("❌ " + data.message);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Something went wrong. Please try again later.");
+    }
   };
 
   if (!isOpen) return null;
@@ -51,7 +95,7 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, onClose }) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white rounded-2xl shadow-xl w-full max-w-lg p-6 relative">
-        
+
         {/* Close button */}
         <button
           className="absolute top-3 right-3 text-gray-500 hover:text-gray-700 text-xl"
@@ -126,13 +170,13 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, onClose }) => {
               className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 outline-none"
             >
               <option value="" disabled>
-                      Select a course
-                    </option>
-                    {courses.map((course, idx) => (
-                      <option key={idx} value={course}>
-                        {course}
-                      </option>
-                       ))}
+                Select a course
+              </option>
+              {courses.map((course, idx) => (
+                <option key={idx} value={course}>
+                  {course}
+                </option>
+              ))}
             </select>
           </div>
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -118,6 +119,63 @@ const Internship = () => {
     },
   ];
 
+   const [formData, setFormData] = useState({
+    Name: "",
+    email: "",
+    mobile: "",
+    Course: "",
+    BatchStartDate: "",
+    CertificateReceived: "",
+    InternshipType: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Submitting data:", formData); // ✅ log form values
+
+    try {
+      const res = await fetch(
+        "https://schoolcommunication-gmdtekepd3g3ffb9.canadacentral-01.azurewebsites.net/api/postMSMSForm/chennaiDredumedJoinUs",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer 123",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      const data = await res.json();
+      console.log("API Response:", data);
+
+      if (!data.error) {
+        alert("✅ " + data.message);
+        // reset form
+        setFormData({
+          Name: "",
+          email: "",
+          mobile: "",
+          Course: "",
+          BatchStartDate: "",
+          CertificateReceived: "",
+          InternshipType: "",
+        });
+      } else {
+        alert("❌ " + data.message);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Something went wrong. Please try again later.");
+    }
+  };
+
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
@@ -145,7 +203,7 @@ const Internship = () => {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              Kickstart Your Medical Career with 
+              Kickstart Your Medical Career with
               <span className="block bg-gradient-to-r from-blue-300 via-green-200 to-teal-300 bg-clip-text text-transparent animate-gradient-slow">
                 World-Class Clinical Internships
               </span>
@@ -364,14 +422,18 @@ const Internship = () => {
                 Fill out the form to begin your journey with Dr. EduMed
               </p>
 
-              <form className="grid gap-4">
+              <form className="grid gap-4" onSubmit={handleSubmit}>
                 {/* Candidate Name + Contact Number */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-gray-700 font-medium mb-2">Full Name</label>
                     <input
                       type="text"
+                      name="Name"
+                      value={formData.Name}
+                      onChange={handleChange}
                       className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-400 outline-none w-full"
+                      required
                     />
                   </div>
 
@@ -379,7 +441,11 @@ const Internship = () => {
                     <label className="block text-gray-700 font-medium mb-2">Contact Number</label>
                     <input
                       type="text"
+                      name="mobile"
+                      value={formData.mobile}
+                      onChange={handleChange}
                       className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-400 outline-none w-full"
+                      required
                     />
                   </div>
                 </div>
@@ -389,15 +455,25 @@ const Internship = () => {
                   <label className="block text-gray-700 font-medium mb-2">Email Address</label>
                   <input
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-400 outline-none w-full"
+                    required
                   />
                 </div>
 
                 {/* Course */}
                 <div>
                   <label className="block text-gray-700 font-medium mb-2">Course</label>
-                  <select className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-400 outline-none w-full">
-                    <option>Select Course</option>
+                  <select
+                    name="Course"
+                    value={formData.Course}
+                    onChange={handleChange}
+                    className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-400 outline-none w-full"
+                    required
+                  >
+                    <option value="">Select Course</option>
                     <option>Master in Facial Injectables</option>
                     <option>PG Diploma in Clinical Cosmetology</option>
                     <option>Fellowship in Facial Aesthetics</option>
@@ -412,18 +488,31 @@ const Internship = () => {
                 {/* Batch Start Date */}
                 <div>
                   <label className="block text-gray-700 font-medium mb-2">Batch Start Date</label>
-                  <select className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-400 outline-none w-full">
-                    <option>Select Batch</option>
-                    {/* <option>Batch 1</option>
-      <option>Batch 2</option> */}
+                  <select
+                    name="BatchStartDate"
+                    value={formData.BatchStartDate}
+                    onChange={handleChange}
+                    className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-400 outline-none w-full"
+                    required
+                  >
+                    <option value="">Select Batch</option>
+                    <option>Batch 1</option>
+                    <option>Batch 2</option>
+                    <option>Batch 3</option>
                   </select>
                 </div>
 
                 {/* Certificate Received */}
                 <div>
                   <label className="block text-gray-700 font-medium mb-2">Certificate Received</label>
-                  <select className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-400 outline-none w-full">
-                    <option>Select</option>
+                  <select
+                    name="CertificateReceived"
+                    value={formData.CertificateReceived}
+                    onChange={handleChange}
+                    className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-400 outline-none w-full"
+                    required
+                  >
+                    <option value="">Select</option>
                     <option>Yes</option>
                     <option>No</option>
                   </select>
@@ -432,8 +521,14 @@ const Internship = () => {
                 {/* Internship Type */}
                 <div>
                   <label className="block text-gray-700 font-medium mb-2">Internship Type</label>
-                  <select className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-400 outline-none w-full">
-                    <option>Select Internship Type</option>
+                  <select
+                    name="InternshipType"
+                    value={formData.InternshipType}
+                    onChange={handleChange}
+                    className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-400 outline-none w-full"
+                    required
+                  >
+                    <option value="">Select Internship Type</option>
                     <option>National</option>
                     <option>International</option>
                   </select>

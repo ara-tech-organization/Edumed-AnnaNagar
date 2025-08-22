@@ -110,6 +110,49 @@ const Contact = () => {
     setOpenIndex(openIndex === index ? null : index); // toggle, but only one open at a time
   };
 
+  const [formData, setFormData] = useState({
+    Name: "",
+    email: "",
+    mobile: "",
+    Message: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Submitting data:", formData); // ✅ Print values in console
+
+    try {
+      const res = await fetch(
+        "https://schoolcommunication-gmdtekepd3g3ffb9.canadacentral-01.azurewebsites.net/api/postMSMSForm/chennaiDredumedAppoinment",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer 123",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      const data = await res.json();
+      console.log("API Response:", data);
+
+      if (!data.error) {
+        alert("✅ " + data.message);
+        setFormData({ Name: "", email: "", mobile: "", Message: "" });
+      } else {
+        alert("❌ " + data.message);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Something went wrong. Try again later.");
+    }
+  };
+
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
@@ -168,29 +211,42 @@ const Contact = () => {
               fresh perspectives.
             </p>
 
-            <form className="space-y-5">
-              {["Your Name", "Email Address", "Phone Number"].map((placeholder, i) => (
-                <input
-                  key={i}
-                  className="w-full p-4 rounded-xl bg-white border border-gray-200 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-300 transition-all"
-                  placeholder={placeholder}
-                  type={
-                    placeholder.includes("Email")
-                      ? "email"
-                      : placeholder.includes("Phone")
-                        ? "tel"
-                        : "text"
-                  }
-                  required
-                  {...(placeholder.includes("Phone") && {
-                    pattern: "[0-9]{10}",
-                    maxLength: 10,
-                    title: "Enter a valid 10-digit phone number",
-                  })}
-                />
-              ))}
-
+            {/* ✅ Integrated API form */}
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <input
+                name="Name"
+                value={formData.Name}
+                onChange={handleChange}
+                className="w-full p-4 rounded-xl bg-white border border-gray-200 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-300 transition-all"
+                placeholder="Your Name"
+                type="text"
+                required
+              />
+              <input
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full p-4 rounded-xl bg-white border border-gray-200 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-300 transition-all"
+                placeholder="Email Address"
+                type="email"
+                required
+              />
+              <input
+                name="mobile"
+                value={formData.mobile}
+                onChange={handleChange}
+                className="w-full p-4 rounded-xl bg-white border border-gray-200 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-300 transition-all"
+                placeholder="Phone Number"
+                type="tel"
+                pattern="[0-9]{10}"
+                maxLength={10}
+                title="Enter a valid 10-digit phone number"
+                required
+              />
               <textarea
+                name="Message"
+                value={formData.Message}
+                onChange={handleChange}
                 rows={4}
                 className="w-full p-4 rounded-xl bg-white border border-gray-200 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-300 transition-all"
                 placeholder="Your Message"
@@ -214,7 +270,8 @@ const Contact = () => {
               {
                 icon: MapPin,
                 title: "Visit Us",
-                details: "New No.1 , old No. C-52, Muvas Arcade, 2nd Floor 2nd Avenue, 1st Main Rd,C Block, Annanagar East,Chennai, Tamil Nadu 600030",
+                details:
+                  "New No.1 , old No. C-52, Muvas Arcade, 2nd Floor 2nd Avenue, 1st Main Rd,C Block, Annanagar East,Chennai, Tamil Nadu 600030",
               },
             ].map((item, idx) => (
               <div

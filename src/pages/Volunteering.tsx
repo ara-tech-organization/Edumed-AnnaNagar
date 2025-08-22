@@ -52,6 +52,70 @@ const Volunteering = () => {
     { icon: Maximize, title: "Skin Tightening", desc: "Non-invasive skin firming treatments" },
   ];
 
+  const [formData, setFormData] = useState({
+    Name: "",
+    email: "",
+    mobile: "",
+    Age: "",
+    Gender: "",
+    ServiceOfInterest: "",
+    SurgeryBefore: "",
+    SurgeryDetails: "",
+    AnyAllergies: "",
+    SpecifyAllergies: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Submitting data:", formData); // ✅ print values in console
+
+    try {
+      const res = await fetch(
+        "https://schoolcommunication-gmdtekepd3g3ffb9.canadacentral-01.azurewebsites.net/api/postMSMSForm/chennaiDredumedApplication",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer 123",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      const data = await res.json();
+      console.log("API Response:", data);
+
+      if (!data.error) {
+        alert("✅ " + data.message);
+        setFormData({
+          Name: "",
+          email: "",
+          mobile: "",
+          Age: "",
+          Gender: "",
+          ServiceOfInterest: "",
+          SurgeryBefore: "",
+          SurgeryDetails: "",
+          AnyAllergies: "",
+          SpecifyAllergies: "",
+        });
+        setSurgeryHistory("");
+        setAllergyHistory("");
+      } else {
+        alert("❌ " + data.message);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Something went wrong. Try again later.");
+    }
+  };
+
   const benefits = [
     {
       icon: Heart,
@@ -517,13 +581,17 @@ const Volunteering = () => {
             </h3>
             <p className="text-gray-500 mb-8">Start your volunteer journey today</p>
 
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               {/* Full Name */}
               <div>
                 <label className="block text-gray-700 font-medium mb-2">Full Name</label>
                 <input
                   type="text"
+                  name="Name"
+                  value={formData.Name}
+                  onChange={handleChange}
                   className="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary/50"
+                  required
                 />
               </div>
 
@@ -532,7 +600,11 @@ const Volunteering = () => {
                 <label className="block text-gray-700 font-medium mb-2">Email</label>
                 <input
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   className="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary/50"
+                  required
                 />
               </div>
 
@@ -542,15 +614,27 @@ const Volunteering = () => {
                   <label className="block text-gray-700 font-medium mb-2">Age</label>
                   <input
                     type="number"
+                    name="Age"
+                    value={formData.Age}
+                    onChange={handleChange}
                     className="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary/50"
+                    required
                   />
                 </div>
 
                 <div>
-                  <label className="block text-gray-700 font-medium mb-2">Contact Number</label>
+                  <label className="block text-gray-700 font-medium mb-2">
+                    Contact Number
+                  </label>
                   <input
                     type="tel"
+                    name="mobile"
+                    value={formData.mobile}
+                    onChange={handleChange}
                     className="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary/50"
+                    pattern="[0-9]{10}"
+                    maxLength={10}
+                    required
                   />
                 </div>
               </div>
@@ -558,20 +642,34 @@ const Volunteering = () => {
               {/* Gender */}
               <div>
                 <label className="block text-gray-700 font-medium mb-2">Gender</label>
-                <select className="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary/50">
-                  <option>Select Gender</option>
-                  <option>Male</option>
-                  <option>Female</option>
-                  <option>Other</option>
-                  <option>Prefer not to say</option>
+                <select
+                  name="Gender"
+                  value={formData.Gender}
+                  onChange={handleChange}
+                  className="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary/50"
+                  required
+                >
+                  <option value="">Select Gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
+                  <option value="Prefer not to say">Prefer not to say</option>
                 </select>
               </div>
 
               {/* Service of Interest */}
               <div>
-                <label className="block text-gray-700 font-medium mb-2">Service of Interest</label>
-                <select className="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary/50">
-                  <option>Select Service</option>
+                <label className="block text-gray-700 font-medium mb-2">
+                  Service of Interest
+                </label>
+                <select
+                  name="ServiceOfInterest"
+                  value={formData.ServiceOfInterest}
+                  onChange={handleChange}
+                  className="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary/50"
+                  required
+                >
+                  <option value="">Select Service</option>
                   {services.map((service, idx) => (
                     <option key={idx} value={service.title}>
                       {service.title}
@@ -585,11 +683,17 @@ const Volunteering = () => {
 
               {/* Surgery History */}
               <div>
-                <label className="block text-gray-700 font-medium mb-2">Have you undergone surgeries before?</label>
+                <label className="block text-gray-700 font-medium mb-2">
+                  Have you undergone surgeries before?
+                </label>
                 <select
-                  className="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary/50"
+                  name="SurgeryBefore"
                   value={surgeryHistory}
-                  onChange={(e) => setSurgeryHistory(e.target.value)}
+                  onChange={(e) => {
+                    setSurgeryHistory(e.target.value);
+                    setFormData({ ...formData, SurgeryBefore: e.target.value });
+                  }}
+                  className="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary/50"
                 >
                   <option value="">Select</option>
                   <option value="Yes">Yes</option>
@@ -599,9 +703,14 @@ const Volunteering = () => {
 
               {surgeryHistory === "Yes" && (
                 <div>
-                  <label className="block text-gray-700 font-medium mb-2">Please specify the surgery details</label>
+                  <label className="block text-gray-700 font-medium mb-2">
+                    Please specify the surgery details
+                  </label>
                   <input
                     type="text"
+                    name="SurgeryDetails"
+                    value={formData.SurgeryDetails}
+                    onChange={handleChange}
                     className="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary/50"
                   />
                 </div>
@@ -609,11 +718,17 @@ const Volunteering = () => {
 
               {/* Allergy History */}
               <div>
-                <label className="block text-gray-700 font-medium mb-2">Do you have any allergies?</label>
+                <label className="block text-gray-700 font-medium mb-2">
+                  Do you have any allergies?
+                </label>
                 <select
-                  className="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary/50"
+                  name="AnyAllergies"
                   value={allergyHistory}
-                  onChange={(e) => setAllergyHistory(e.target.value)}
+                  onChange={(e) => {
+                    setAllergyHistory(e.target.value);
+                    setFormData({ ...formData, AnyAllergies: e.target.value });
+                  }}
+                  className="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary/50"
                 >
                   <option value="">Select</option>
                   <option value="Yes">Yes</option>
@@ -623,9 +738,14 @@ const Volunteering = () => {
 
               {allergyHistory === "Yes" && (
                 <div>
-                  <label className="block text-gray-700 font-medium mb-2">Please specify your allergies</label>
+                  <label className="block text-gray-700 font-medium mb-2">
+                    Please specify your allergies
+                  </label>
                   <input
                     type="text"
+                    name="SpecifyAllergies"
+                    value={formData.SpecifyAllergies}
+                    onChange={handleChange}
                     className="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary/50"
                   />
                 </div>
