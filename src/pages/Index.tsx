@@ -360,7 +360,7 @@ const Index = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-white relative overflow-hidden">
+      {/* <section className="py-16 bg-white relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-5"
           style={{ backgroundImage: `url(${medicalPattern})` }}
@@ -393,7 +393,7 @@ const Index = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* About Preview Section */}
       <section className="relative py-16 lg:py-24 bg-white overflow-hidden">
@@ -709,21 +709,21 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-white">
+      {/* <section className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
+          <div className="flex flex-col lg:flex-row items-center gap-12"> */}
 
             {/* Left half - Image */}
-            <div className="w-full lg:w-1/2 h-96 lg:h-[450px] rounded-xl overflow-hidden shadow-lg">
+            {/* <div className="w-full lg:w-1/2 h-96 lg:h-[450px] rounded-xl overflow-hidden shadow-lg">
               <img
                 src={heroImage}
                 alt="Happy Medical Students"
                 className="object-cover w-full h-full"
               />
-            </div>
+            </div> */}
 
             {/* Right half - Carousel */}
-            <div className="w-full lg:w-1/2">
+            {/* <div className="w-full lg:w-1/2">
               <Badge className="mb-6 bg-primary/10 text-primary font-semibold uppercase rounded-md py-1 px-3 hover:bg-primary hover:text-white hover:border-primary cursor-pointer">
                 Student Testimonials
               </Badge>
@@ -735,12 +735,12 @@ const Index = () => {
 
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section
         className="max-w-7xl mx-auto p-6 lg:p-12
     rounded-3xl
-    bg-gradient-to-tr from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] mb-8"
+    bg-gradient-to-tr from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] mb-8 mt-12"
       >
         <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-lg">
           <h2 className="text-4xl font-semibold mb-10 text-transparent bg-clip-text bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488]">Frequently Asked Questions</h2>
