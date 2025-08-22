@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { Helmet } from "react-helmet-async";
 import { Badge } from '@/components/ui/badge';
 import {
   Heart,
@@ -24,7 +25,7 @@ import {
 } from "lucide-react";
 
 // Import images
-import heroImage from '@/assets/hero-medical.jpg';
+import heroImage from '@/assets/Volunteer.jpeg';
 import educationBg from '@/assets/education-bg.jpg';
 import volunteerModel from "@/assets/volunteer 1.jpeg"
 import formBg from "@/assets/formbg.jpg"
@@ -188,6 +189,35 @@ const Volunteering = () => {
 
   return (
     <div className="overflow-hidden">
+
+      {/* ✅ SEO Helmet */}
+      <Helmet>
+        <title>Volunteer Programs | Dr. EduMed</title>
+        <meta
+          name="description"
+          content="Join Dr. EduMed’s Volunteer Program and gain hands-on experience in advanced aesthetic medicine while contributing to medical education. Safe, supervised treatments at no cost."
+        />
+        <meta
+          name="keywords"
+          content="volunteer in aesthetic medicine, medical volunteering, free aesthetic treatments, Dr EduMed volunteer program, clinical volunteering healthcare"
+        />
+        <meta property="og:title" content="Volunteer Programs | Dr. EduMed" />
+        <meta
+          property="og:description"
+          content="Help advance medical education while receiving professional aesthetic treatments at Dr. EduMed’s Volunteer Program."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={heroImage} />
+        <meta
+          property="og:url"
+          content="https://youredumedsite.com/volunteering"
+        />
+        <link
+          rel="canonical"
+          href="https://youredumedsite.com/volunteering"
+        />
+      </Helmet>
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image */}
@@ -198,7 +228,7 @@ const Volunteering = () => {
             className="w-full h-full object-cover"
           />
           {/* Dark overlay for readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-teal-900/60 to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-teal-700/40 to-black/40"></div>
         </div>
 
         {/* Content Area */}

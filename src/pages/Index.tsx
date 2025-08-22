@@ -53,7 +53,7 @@ import Lasers from "@/assets/Lasers.png";
 import bannerImage from "@/assets/edumed-laon-BPmkpsdI.webp"
 import bgImage from "@/assets/hero-medical.jpg"
 import { FaArrowRight } from "react-icons/fa";
-
+import { Helmet } from "react-helmet-async";
 
 import { useNavigate } from "react-router-dom";
 import FormModal from "./FormModal";
@@ -261,6 +261,42 @@ const Index = () => {
 
   return (
     <div className="overflow-hidden">
+       {/* ✅ SEO Meta Tags */}
+      <Helmet>
+        <title>Dr. EduMed – Anna Nagar | Medical & Aesthetic Training Institute</title>
+        <meta
+          name="description"
+          content="Join Dr. EduMed Anna Nagar for world-class medical & aesthetic career training. Hands-on practice, expert faculty, and globally recognized certifications."
+        />
+        <meta
+          name="keywords"
+          content="Dr EduMed Anna Nagar, medical training Chennai, aesthetic courses, cosmetology diploma, facial injectables, clinical cosmetology, healthcare certifications"
+        />
+        <meta name="author" content="Dr. EduMed Institute" />
+
+        {/* ✅ Open Graph / Facebook */}
+        <meta property="og:title" content="Dr. EduMed – Anna Nagar | Medical & Aesthetic Training Institute" />
+        <meta
+          property="og:description"
+          content="Dreaming of a successful career in Aesthetics & Medical Sciences? Dr. EduMed Anna Nagar offers advanced training, hands-on practice & global certifications."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://yourdomain.com/" />
+        <meta property="og:image" content="https://yourdomain.com/preview-image.jpg" />
+
+        {/* ✅ Twitter Cards */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Dr. EduMed – Anna Nagar | Medical & Aesthetic Training Institute" />
+        <meta
+          name="twitter:description"
+          content="Advance your career with Dr. EduMed Anna Nagar’s medical & aesthetic training programs."
+        />
+        <meta name="twitter:image" content="https://yourdomain.com/preview-image.jpg" />
+
+        {/* ✅ Canonical URL */}
+        <link rel="canonical" href="https://yourdomain.com/" />
+      </Helmet>
+
       {/* Hero Section */}
       <section
         className="relative overflow-hidden min-h-[90vh] flex items-center justify-center text-center px-6"

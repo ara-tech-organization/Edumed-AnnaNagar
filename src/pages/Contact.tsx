@@ -18,7 +18,8 @@ import {
 } from "lucide-react";
 
 // Import images
-import heroImage from "@/assets/hero-medical.jpg";
+import heroImage from "@/assets/Contact Us.jpg";
+import { Helmet } from "react-helmet-async"; 
 
 const Contact = () => {
   const contactInfo = [
@@ -155,8 +156,38 @@ const Contact = () => {
 
   return (
     <div className="overflow-hidden">
+
+      {/* ✅ SEO with Helmet */}
+      <Helmet>
+        <title>Contact Dr. Edumed Academy | Get in Touch Today</title>
+        <meta
+          name="description"
+          content="Get in touch with Dr. Edumed Academy in Chennai. Call us, email us, or visit our campus for admissions, student services, and general inquiries."
+        />
+        <meta
+          name="keywords"
+          content="Dr Edumed Chennai contact, medical academy Chennai, admissions, student support, Dr Edumed phone, Dr Edumed address"
+        />
+        <meta name="author" content="Dr. Edumed Academy" />
+        <meta property="og:title" content="Contact Dr. Edumed Academy" />
+        <meta
+          property="og:description"
+          content="Reach out to Dr. Edumed Academy for admissions, programs, and student services. We're here to support your medical education journey."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content={heroImage}
+        />
+        <meta
+          property="og:url"
+          content="https://www.dredumed.com/contact"
+        />
+        <link rel="canonical" href="https://www.dredumed.com/contact" />
+      </Helmet>
+
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center justify-center">
+      <section className="relative min-h-[85vh] flex items-center justify-center">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}

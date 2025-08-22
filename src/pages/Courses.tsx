@@ -44,7 +44,8 @@ import Hydrafacial from "@/assets/Hydrafacial.png";
 import HeadingWithUnderline from "@/components/HeadingWithUnderline";
 // import Underline from "/line.png";
 import { useEffect } from "react";
-import AboutUsBg from "@/assets/hero-medical.jpg";
+import AboutUsBg from "@/assets/Coures.png";
+import { Helmet } from "react-helmet-async"; 
 // import CourseDoctor from "@/assets/Courses.png";
 import { useLocation } from "react-router-dom";
 
@@ -464,8 +465,45 @@ const Courses = () => {
   }, [location.search]);
   return (
     <div>
+
+     {/* ✅ SEO Meta Tags */}
+      <Helmet>
+        <title>Courses – Dr. EduMed Medical & Aesthetic Academy Anna Nagar</title>
+        <meta
+          name="description"
+          content="Explore globally recognized courses at Dr. EduMed Anna Nagar – Master Courses, PG Diplomas, Fellowships, Certificate Courses & Live Workshops in aesthetic medicine, dermatology, cosmetology, and trichology."
+        />
+        <meta
+          name="keywords"
+          content="Dr EduMed courses, Anna Nagar medical academy, Botox training, dermal fillers certification, hair transplant course, cosmetology diploma Chennai, fellowship in aesthetics, skin technician program, laser training, HydraFacial workshop"
+        />
+        <meta name="author" content="Dr. EduMed Institute" />
+
+        {/* ✅ Open Graph / Facebook */}
+        <meta property="og:title" content="Courses – Dr. EduMed Medical & Aesthetic Academy" />
+        <meta
+          property="og:description"
+          content="Advance your career with Master, PG Diploma, Fellowship, and Certificate programs in aesthetic medicine. Practical training, global certifications, and placement support."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://yourdomain.com/courses" />
+        <meta property="og:image" content="https://yourdomain.com/preview-image-courses.jpg" />
+
+        {/* ✅ Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Courses – Dr. EduMed Medical & Aesthetic Academy" />
+        <meta
+          name="twitter:description"
+          content="Join Dr. EduMed Anna Nagar’s globally accredited courses in aesthetics, dermatology, cosmetology, and trichology."
+        />
+        <meta name="twitter:image" content="https://yourdomain.com/preview-image-courses.jpg" />
+
+        {/* ✅ Canonical URL */}
+        <link rel="canonical" href="https://yourdomain.com/courses" />
+      </Helmet>
+
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-16 lg:py-24 bg-gradient-to-br from-blue-50 via-white to-emerald-50">
+      <section className="relative overflow-hidden py-16 lg:py-28 bg-gradient-to-br from-blue-50 via-white to-emerald-50">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center"

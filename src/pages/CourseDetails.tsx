@@ -37,6 +37,7 @@ import FAQImg from "@/assets/FAQs-amico.jpeg"
 
 // import Underline from "/line.png";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
 
 const CourseDetail = () => {
@@ -1295,6 +1296,28 @@ const CourseDetail = () => {
 
   return (
     <div className="min-h-screen">
+
+      {/* ✅ SEO Helmet for Dynamic Meta Tags */}
+      <Helmet>
+        <title>{course.title} | Dr. EduMed</title>
+        <meta
+          name="description"
+          content={
+            course.description ||
+            "Explore detailed information about our medical aesthetic courses at Dr. EduMed."
+          }
+        />
+        <meta
+          name="keywords"
+          content={`${course.title}, ${course.category}, medical aesthetics, ${course.duration}, ${course.eligibility}`}
+        />
+        <meta property="og:title" content={course.title} />
+        <meta property="og:description" content={course.description} />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content={course.image} />
+        <meta property="og:url" content={`https://youredumedsite.com/courses/${course.id}`} />
+      </Helmet>
+
       {/* Header with Back Button */}
       <section className="relative py-16 bg-gradient-to-b from-white to-blue-50">
         <div className="container mx-auto px-6 lg:px-12">

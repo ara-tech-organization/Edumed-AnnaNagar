@@ -19,7 +19,8 @@ import {
 } from 'lucide-react';
 
 // Import images
-import heroImage from '@/assets/hero-medical.jpg';
+import heroImage from '@/assets/About Us.webp';
+import { Helmet } from "react-helmet-async";
 import educationBg from '@/assets/education-bg.jpg';
 
 const About = () => {
@@ -89,6 +90,43 @@ const About = () => {
 
   return (
     <div className="overflow-hidden">
+
+       {/* ✅ SEO Meta Tags */}
+      <Helmet>
+        <title>About Us – Dr. EduMed Medical & Aesthetic Academy Anna Nagar</title>
+        <meta
+          name="description"
+          content="Discover Dr. EduMed Anna Nagar’s 20+ years of excellence in medical and aesthetic education. Expert-led training, global accreditations, career placements, and hands-on practice for licensed professionals."
+        />
+        <meta
+          name="keywords"
+          content="Dr EduMed About, Anna Nagar medical academy, aesthetic training Chennai, Botox courses, dermal fillers training, skin rejuvenation certification, healthcare academy"
+        />
+        <meta name="author" content="Dr. EduMed Institute" />
+
+        {/* ✅ Open Graph / Facebook */}
+        <meta property="og:title" content="About Dr. EduMed – Leading Medical & Aesthetic Academy" />
+        <meta
+          property="og:description"
+          content="With over 20 years of shaping healthcare careers, Dr. EduMed Anna Nagar offers globally recognized medical & aesthetic training with real-world expertise."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://yourdomain.com/about" />
+        <meta property="og:image" content="https://yourdomain.com/preview-image-about.jpg" />
+
+        {/* ✅ Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Dr. EduMed – Anna Nagar Medical & Aesthetic Academy" />
+        <meta
+          name="twitter:description"
+          content="Dr. EduMed Anna Nagar provides advanced medical & aesthetic education with hands-on training and global certifications."
+        />
+        <meta name="twitter:image" content="https://yourdomain.com/preview-image-about.jpg" />
+
+        {/* ✅ Canonical URL */}
+        <link rel="canonical" href="https://yourdomain.com/about" />
+      </Helmet>
+
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden">
         {/* Background image */}

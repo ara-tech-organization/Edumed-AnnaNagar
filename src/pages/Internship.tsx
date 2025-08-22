@@ -28,7 +28,8 @@ import {
   faComments,
 } from "@fortawesome/free-solid-svg-icons";
 // Import images
-import heroImage from "@/assets/hero-medical.jpg";
+import heroImage from "@/assets/Internship.jpg";
+import { Helmet } from "react-helmet-async";
 import educationBg from "@/assets/education-bg.jpg";
 // import hero from "@/assets/"
 
@@ -119,7 +120,7 @@ const Internship = () => {
     },
   ];
 
-   const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState({
     Name: "",
     email: "",
     mobile: "",
@@ -178,6 +179,58 @@ const Internship = () => {
 
   return (
     <div className="overflow-hidden">
+
+      {/* ✅ SEO Meta Tags */}
+      <Helmet>
+        <title>Medical Internship Program – Dr. EduMed Academy Anna Nagar</title>
+        <meta
+          name="description"
+          content="Join Dr. EduMed’s world-class Medical Internship Program in Anna Nagar. Gain hands-on experience in General Medicine, Surgery, Pediatrics, and Emergency Medicine with expert mentorship and global exposure."
+        />
+        <meta
+          name="keywords"
+          content="medical internship Anna Nagar, Dr EduMed internship, clinical internship Chennai, general medicine internship, surgical internship, pediatrics internship, emergency medicine internship, residency preparation, medical training Chennai"
+        />
+        <meta name="author" content="Dr. EduMed Institute" />
+
+        {/* ✅ Open Graph / Facebook */}
+        <meta
+          property="og:title"
+          content="Medical Internship Program – Dr. EduMed Academy"
+        />
+        <meta
+          property="og:description"
+          content="Kickstart your medical career with Dr. EduMed’s clinical internships. Real-world training, mentorship, and 98% residency placement success."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://yourdomain.com/internship"
+        />
+        <meta
+          property="og:image"
+          content="https://yourdomain.com/preview-image-internship.jpg"
+        />
+
+        {/* ✅ Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Medical Internship Program – Dr. EduMed Academy"
+        />
+        <meta
+          name="twitter:description"
+          content="Gain hands-on training in General Medicine, Surgery, Pediatrics, and Emergency Medicine at Dr. EduMed Anna Nagar."
+        />
+        <meta
+          name="twitter:image"
+          content="https://yourdomain.com/preview-image-internship.jpg"
+        />
+
+        {/* ✅ Canonical URL */}
+        <link rel="canonical" href="https://yourdomain.com/internship" />
+      </Helmet>
+
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center">
         {/* Background image */}
