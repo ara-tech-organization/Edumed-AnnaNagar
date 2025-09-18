@@ -1,9 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const ThankYou = () => {
+
+  useEffect(() => {
+    // ✅ Inject Google Ads conversion script
+    const script = document.createElement("script");
+    script.innerHTML = `
+      gtag('event', 'conversion', {
+        'send_to': 'AW-17540744930/fTXTCMjaqZ0bEOKNiqxB',
+        'value': 500.0,
+        'currency': 'INR'
+      });
+    `;
+    document.body.appendChild(script);
+
+    // Cleanup: remove script when component unmounts
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-emerald-50 via-white to-indigo-50 px-4">
       <Helmet>
