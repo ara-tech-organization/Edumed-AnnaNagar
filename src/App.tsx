@@ -38,6 +38,7 @@ import FaceInjection from "./pages/CourseDetails/FaceInjection";
 import FacialAesthetic from "./pages/CourseDetails/FacialAesthetics";
 import FellowCosmetology from "./pages/CourseDetails/FellowCosmetology";
 import SkinTechnicians from "./pages/CourseDetails/SkinTechnician";
+import ThankYou from "./pages/ThankYou";
 
 const queryClient = new QueryClient();
 
@@ -69,6 +70,7 @@ const App = () => {
                 <Route path="/course/:id" element={<CourseDetails />} />
                 <Route path="/volunteering" element={<Volunteering />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/thank-you" element={<ThankYou />} />
 
                 <Route path="/semi-permanentmakeup" element={<SemiPermanentMakeup />} />
                 <Route path="/hydra-facial" element={<HydraFacial />} />

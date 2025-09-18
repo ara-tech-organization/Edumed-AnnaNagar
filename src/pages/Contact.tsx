@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import {
   Phone,
@@ -19,9 +20,12 @@ import {
 
 // Import images
 import heroImage from "@/assets/Contact Us.jpg";
-import { Helmet } from "react-helmet-async"; 
+import { Helmet } from "react-helmet-async";
 
 const Contact = () => {
+  const navigate = useNavigate(); // ✅ Add this
+  const [loading, setLoading] = useState(false); // ✅ Add loading state
+
   const contactInfo = [
     {
       icon: Phone,
@@ -124,6 +128,7 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true); // ✅ start loader
     console.log("Submitting data:", formData); // ✅ Print values in console
 
     try {
@@ -140,22 +145,52 @@ const Contact = () => {
       );
 
       const data = await res.json();
+      setLoading(false); // ✅ stop loader
       console.log("API Response:", data);
 
       if (!data.error) {
-        alert("✅ " + data.message);
+        navigate("/thank-you"); // ✅ Navigate to ThankYou page
         setFormData({ Name: "", email: "", mobile: "", Message: "" });
       } else {
         alert("❌ " + data.message);
       }
     } catch (error) {
+      setLoading(false); // ✅ stop loader
       console.error("Error submitting form:", error);
       alert("Something went wrong. Try again later.");
     }
   };
 
   return (
+
     <div className="overflow-hidden">
+      {loading && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm">
+          <div className="flex flex-col items-center">
+            <svg
+              className="animate-spin h-16 w-16 text-emerald-400 mb-4"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="4"
+              ></circle>
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 100 16v-4l-3 3 3 3v-4a8 8 0 01-8-8z"
+              ></path>
+            </svg>
+            <p className="text-white text-lg font-semibold">Sending your message...</p>
+          </div>
+        </div>
+      )}
 
       {/* ✅ SEO with Helmet */}
       <Helmet>
