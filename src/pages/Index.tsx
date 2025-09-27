@@ -261,40 +261,13 @@ const Index = () => {
 
   return (
     <div className="overflow-hidden">
-       {/* ✅ SEO Meta Tags */}
+      {/* ✅ SEO Meta Tags */}
       <Helmet>
-        <title>Dr. EduMed – Anna Nagar | Medical & Aesthetic Training Institute</title>
+        <title>DrEduMed – Medical & Aesthetic Training Academy, Chennai</title>
         <meta
           name="description"
-          content="Join Dr. EduMed Anna Nagar for world-class medical & aesthetic career training. Hands-on practice, expert faculty, and globally recognized certifications."
+          content="Learn Botox, Fillers, Lasers, and Skin & Hair Treatments from expert doctors through hands-on training. 👉 Join DrEduMed Chennai – Where Learning Meets Innovation!"
         />
-        <meta
-          name="keywords"
-          content="Dr EduMed Anna Nagar, medical training Chennai, aesthetic courses, cosmetology diploma, facial injectables, clinical cosmetology, healthcare certifications"
-        />
-        <meta name="author" content="Dr. EduMed Institute" />
-
-        {/* ✅ Open Graph / Facebook */}
-        <meta property="og:title" content="Dr. EduMed – Anna Nagar | Medical & Aesthetic Training Institute" />
-        <meta
-          property="og:description"
-          content="Dreaming of a successful career in Aesthetics & Medical Sciences? Dr. EduMed Anna Nagar offers advanced training, hands-on practice & global certifications."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourdomain.com/" />
-        <meta property="og:image" content="https://yourdomain.com/preview-image.jpg" />
-
-        {/* ✅ Twitter Cards */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Dr. EduMed – Anna Nagar | Medical & Aesthetic Training Institute" />
-        <meta
-          name="twitter:description"
-          content="Advance your career with Dr. EduMed Anna Nagar’s medical & aesthetic training programs."
-        />
-        <meta name="twitter:image" content="https://yourdomain.com/preview-image.jpg" />
-
-        {/* ✅ Canonical URL */}
-        <link rel="canonical" href="https://yourdomain.com/" />
       </Helmet>
 
       {/* Hero Section */}
@@ -313,22 +286,19 @@ const Index = () => {
         {/* LEFT CONTENT */}
         <div className="flex justify-center items-center text-center">
           <div className="lg:w-full z-10 space-y-6 max-w-4xl">
-            <h1
-              className="text-2xl lg:text-5xl font-bold leading-tight text-white max-w-7xl mx-auto"
-
-            >
+            <h1 className="text-2xl lg:text-5xl font-bold leading-tight text-white max-w-7xl mx-auto">
               Welcome to Dr. EduMed – Anna Nagar
             </h1>
 
-            <h4
-              className="text-xl lg:text-4xl font-bold leading-tight text-white max-w-5xl mx-auto"
-
-            >
+            <h4 className="text-xl lg:text-4xl font-bold leading-tight text-white max-w-5xl mx-auto">
               Empowering Your Future in Medical & Aesthetic Careers
             </h4>
 
             <p className="text-lg opacity-90 text-white">
-              Dreaming of a successful career in Aesthetics and Medical Sciences? Dr. EduMed Anna Nagar offers world-class training, hands-on practice, and internationally recognized certifications to help you achieve your professional goals.
+              Dreaming of a successful career in Aesthetics and Medical
+              Sciences? Dr. EduMed Anna Nagar offers world-class training,
+              hands-on practice, and internationally recognized certifications
+              to help you achieve your professional goals.
             </p>
 
             <div className="flex justify-center">
@@ -398,7 +368,6 @@ const Index = () => {
       {/* About Preview Section */}
       <section className="relative py-16 lg:py-24 bg-white overflow-hidden">
         <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-14 items-center">
-
           {/* Left: Image */}
           <div data-aos="fade-right" className="relative order-1">
             <img
@@ -424,11 +393,16 @@ const Index = () => {
 
             {/* Paragraphs */}
             <p className="text-lg text-gray-600 mb-6 mt-4">
-              At Dr. EduMed, we’re more than just a training institute — we’re a community of medical and aesthetic experts shaping the future of healthcare professionals.
-              Our programs combine theory with advanced hands-on training, ensuring you graduate with the skills and confidence to thrive in the fast-growing aesthetics and wellness industry.
+              At Dr. EduMed, we’re more than just a training institute — we’re a
+              community of medical and aesthetic experts shaping the future of
+              healthcare professionals. Our programs combine theory with
+              advanced hands-on training, ensuring you graduate with the skills
+              and confidence to thrive in the fast-growing aesthetics and
+              wellness industry.
             </p>
             <p className="text-lg text-gray-600 mb-8">
-              With affiliations to globally recognized bodies, we provide education that is credible, future-focused, and industry ready.
+              With affiliations to globally recognized bodies, we provide
+              education that is credible, future-focused, and industry ready.
             </p>
 
             {/* Button */}
@@ -455,8 +429,8 @@ const Index = () => {
               Why Choose <span className="text-primary">Dr. Edumed?</span>
             </h2>
             <p className="text-lg text-foreground max-w-2xl mx-auto">
-              We combine expertise, global recognition, and career-focused support
-              to help you excel in the medical field.
+              We combine expertise, global recognition, and career-focused
+              support to help you excel in the medical field.
             </p>
           </div>
 
@@ -495,17 +469,23 @@ const Index = () => {
       {/* Featured Courses Section */}
       <section className="section-padding bg-gradient-to-b from-white to-primary/5">
         <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
-
           {/* LEFT CONTENT */}
-          <div className="lg:w-1/2 text-center lg:text-left" data-aos="fade-right">
+          <div
+            className="lg:w-1/2 text-center lg:text-left"
+            data-aos="fade-right"
+          >
             <Badge className="mb-6 bg-primary/10 text-primary hover:bg-primary hover:text-white hover:border-primary cursor-pointer">
               Featured Courses
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Most Popular <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488]">Featured Courses</span>
+              Most Popular{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488]">
+                Featured Courses
+              </span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-xl mb-8">
-              Explore our most in-demand courses designed by top medical professionals to advance your healthcare career.
+              Explore our most in-demand courses designed by top medical
+              professionals to advance your healthcare career.
             </p>
 
             {/* Navigation Arrows */}
@@ -539,10 +519,10 @@ const Index = () => {
               loop={true}
               slidesPerView={1.05} // Mobile default
               breakpoints={{
-                640: { slidesPerView: 1.2 },   // Small tablets
-                768: { slidesPerView: 1.4 },   // Tablets
-                1024: { slidesPerView: 1.6 },  // Desktops
-                1440: { slidesPerView: 1.8 },  // Large desktops
+                640: { slidesPerView: 1.2 }, // Small tablets
+                768: { slidesPerView: 1.4 }, // Tablets
+                1024: { slidesPerView: 1.6 }, // Desktops
+                1440: { slidesPerView: 1.8 }, // Large desktops
               }}
               coverflowEffect={{
                 rotate: 0,
@@ -564,9 +544,15 @@ const Index = () => {
                       className="w-full h-[220px] sm:h-[240px] md:h-[260px] object-cover"
                     />
                     <div className="p-5">
-                      <Badge className="mb-3 bg-primary/90 text-white">{course.tag}</Badge>
-                      <h3 className="font-semibold text-lg mb-2">{course.title}</h3>
-                      <p className="text-sm text-muted-foreground mb-4">{course.description}</p>
+                      <Badge className="mb-3 bg-primary/90 text-white">
+                        {course.tag}
+                      </Badge>
+                      <h3 className="font-semibold text-lg mb-2">
+                        {course.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mb-4">
+                        {course.description}
+                      </p>
 
                       {/* Learn More Button */}
                       <Link to="/courses">
@@ -583,13 +569,14 @@ const Index = () => {
         </div>
       </section>
 
-
       {/* Certified Courses Section */}
       <section className="section-padding bg-gradient-to-b from-white to-primary/5">
         <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
-
           {/* LEFT CAROUSEL */}
-          <div className="lg:w-1/2 lg:pr-8 w-full order-2 lg:order-1" data-aos="fade-right">
+          <div
+            className="lg:w-1/2 lg:pr-8 w-full order-2 lg:order-1"
+            data-aos="fade-right"
+          >
             <Swiper
               onSwiper={setSwiperRef}
               effect="coverflow"
@@ -623,9 +610,15 @@ const Index = () => {
                       className="w-full h-[220px] sm:h-[240px] md:h-[260px] object-cover rounded-2xl"
                     />
                     <div className="p-5">
-                      <Badge className="mb-3 bg-primary/90 text-white">{course.tag}</Badge>
-                      <h3 className="font-semibold text-lg mb-2">{course.title}</h3>
-                      <p className="text-sm text-muted-foreground mb-4">{course.description}</p>
+                      <Badge className="mb-3 bg-primary/90 text-white">
+                        {course.tag}
+                      </Badge>
+                      <h3 className="font-semibold text-lg mb-2">
+                        {course.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mb-4">
+                        {course.description}
+                      </p>
 
                       {/* Learn More Button */}
                       <Link to="/courses">
@@ -641,15 +634,22 @@ const Index = () => {
           </div>
 
           {/* RIGHT CONTENT */}
-          <div className="lg:w-1/2 text-center lg:text-left order-1 lg:order-2" data-aos="fade-left">
+          <div
+            className="lg:w-1/2 text-center lg:text-left order-1 lg:order-2"
+            data-aos="fade-left"
+          >
             <Badge className="mb-6 bg-primary/10 text-primary hover:bg-primary hover:text-white hover:border-primary cursor-pointer">
               Certification Courses
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Most Popular <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488]">Certification Courses</span>
+              Most Popular{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488]">
+                Certification Courses
+              </span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-xl mb-8">
-              Explore our most in-demand courses designed by top medical professionals to advance your healthcare career.
+              Explore our most in-demand courses designed by top medical
+              professionals to advance your healthcare career.
             </p>
 
             {/* Navigation Arrows */}
@@ -713,8 +713,8 @@ const Index = () => {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="flex flex-col lg:flex-row items-center gap-12"> */}
 
-            {/* Left half - Image */}
-            {/* <div className="w-full lg:w-1/2 h-96 lg:h-[450px] rounded-xl overflow-hidden shadow-lg">
+      {/* Left half - Image */}
+      {/* <div className="w-full lg:w-1/2 h-96 lg:h-[450px] rounded-xl overflow-hidden shadow-lg">
               <img
                 src={heroImage}
                 alt="Happy Medical Students"
@@ -722,8 +722,8 @@ const Index = () => {
               />
             </div> */}
 
-            {/* Right half - Carousel */}
-            {/* <div className="w-full lg:w-1/2">
+      {/* Right half - Carousel */}
+      {/* <div className="w-full lg:w-1/2">
               <Badge className="mb-6 bg-primary/10 text-primary font-semibold uppercase rounded-md py-1 px-3 hover:bg-primary hover:text-white hover:border-primary cursor-pointer">
                 Student Testimonials
               </Badge>
@@ -743,9 +743,10 @@ const Index = () => {
     bg-gradient-to-tr from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488] mb-8 mt-12"
       >
         <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-lg">
-          <h2 className="text-4xl font-semibold mb-10 text-transparent bg-clip-text bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488]">Frequently Asked Questions</h2>
+          <h2 className="text-4xl font-semibold mb-10 text-transparent bg-clip-text bg-gradient-to-r from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488]">
+            Frequently Asked Questions
+          </h2>
           <div className="flex flex-col lg:flex-row gap-10 relative">
-
             {/* Left: Questions */}
             <ul className="w-full lg:w-1/2 border border-gray-200 rounded-md bg-white shadow-md z-20">
               {faqs.map((faq, index) => (
@@ -760,7 +761,13 @@ const Index = () => {
                       className={`block w-4 h-4 rounded-full
                 ${activeIndex === index ? "bg-[#6ee7b7]" : "bg-[#a8d5db]"}`}
                     ></span>
-                    <p className={`text-base font-medium ${activeIndex === index ? "text-[#056a7a]" : "text-gray-900"}`}>
+                    <p
+                      className={`text-base font-medium ${
+                        activeIndex === index
+                          ? "text-[#056a7a]"
+                          : "text-gray-900"
+                      }`}
+                    >
                       {faq.question}
                     </p>
                   </div>
@@ -771,7 +778,11 @@ const Index = () => {
                     strokeWidth={2}
                     viewBox="0 0 24 24"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </li>
               ))}
@@ -810,7 +821,6 @@ const Index = () => {
         <FormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       </section>
 
-
       {/* CTA Section */}
       <section className="relative py-20 overflow-hidden bg-gradient-to-tr from-[#1e3a8a] via-[#6ee7b7] to-[#0d9488]">
         {/* Decorative gradient blobs */}
@@ -821,13 +831,19 @@ const Index = () => {
           <div data-aos="fade-up">
             {/* Title */}
             <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6 text-white">
-              🎓 Step into the world of<span className="text-[#fff]"> Aesthetics with confidence</span> Today!
+              🎓 Step into the world of
+              <span className="text-[#fff]">
+                {" "}
+                Aesthetics with confidence
+              </span>{" "}
+              Today!
               <span className="block"></span>
             </h2>
 
             {/* Description */}
             <p className="text-lg md:text-xl text-white/80 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Enroll at Dr. EduMed Anna Nagar today – Your career in medical aesthetics starts here!
+              Enroll at Dr. EduMed Anna Nagar today – Your career in medical
+              aesthetics starts here!
             </p>
 
             {/* Buttons */}
